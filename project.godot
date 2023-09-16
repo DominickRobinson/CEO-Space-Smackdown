@@ -13,7 +13,7 @@ config_version=5
 config/name="CEO Space Smackdown"
 run/main_scene="res://Scenes/Menu/title.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Art/Characters/Musk/MuskAttack2.png"
 
 [autoload]
 

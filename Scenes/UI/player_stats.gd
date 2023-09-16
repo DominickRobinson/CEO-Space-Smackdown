@@ -16,9 +16,11 @@ func _ready():
 	if player.player_number == 1:
 		percent_label = $MarginContainer/Player1Box/MarginContainer/VBoxContainer/Percent
 		$MarginContainer/Player2Box.hide()
+		percent_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	else:
-		percent_label = $MarginContainer/Player2Box/MarginContainer/VBoxContainer/Percent
+		percent_label = $MarginContainer/Player2Box/MarginContainer/VBoxContainer/Percent as Label
 		$MarginContainer/Player1Box.hide()
+		percent_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	
 	set_percent()
 

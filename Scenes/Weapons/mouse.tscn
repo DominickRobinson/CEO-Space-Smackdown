@@ -1,30 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://djkhsgccrpxdv"]
+[gd_scene load_steps=4 format=3 uid="uid://teima8o28dfw"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/meta_quest_controller.gd" id="1_t465m"]
-[ext_resource type="Texture2D" uid="uid://c0f404pururyy" path="res://Assets/Art/Weapons/meta_quest_controller.png" id="2_xsx3q"]
+[ext_resource type="Script" path="res://Scenes/Weapons/meta_quest_controller.gd" id="1_5uh8d"]
+[ext_resource type="Texture2D" uid="uid://0ghrgevet4r" path="res://Assets/Art/Weapons/mouse.png" id="2_2pdct"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_md1bd"]
-height = 46.0
+radius = 16.0
+height = 58.0
 
-[node name="MetaQuestController" type="Node2D"]
-script = ExtResource("1_t465m")
-damage = 20.0
+[node name="Mouse" type="Node2D"]
+script = ExtResource("1_5uh8d")
+damage = 15.0
 impulse_length = 1000.0
 
 [node name="Controller" type="RigidBody2D" parent="."]
 mass = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Controller"]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_xsx3q")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2pdct")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Controller"]
 rest_length = 10.0
 stiffness = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Controller"]
-position = Vector2(2, 3)
-rotation = 2.61799
+position = Vector2(-2, 0)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_md1bd")
 
 [node name="Line2D" type="Line2D" parent="."]
