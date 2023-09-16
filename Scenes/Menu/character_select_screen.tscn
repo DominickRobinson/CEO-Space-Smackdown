@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bkxrrngqph02m"]
+[gd_scene load_steps=30 format=3 uid="uid://bkxrrngqph02m"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://75627d3tqgai" path="res://Assets/Sound/CharacterSelect/Gates.mp3" id="19_gajr0"]
 [ext_resource type="AudioStream" uid="uid://dfkpvafe1av1i" path="res://Assets/Sound/CharacterSelect/Zuckerberg.mp3" id="22_lpbjq"]
 [ext_resource type="AudioStream" uid="uid://cn5f156gsxfms" path="res://Assets/Sound/CharacterSelect/Carnegie.mp3" id="25_day4d"]
+[ext_resource type="PackedScene" uid="uid://cnkq4nb6ti7p6" path="res://Scenes/UI/scene_button.tscn" id="29_iql2b"]
 
 [node name="character_select_screen" type="Control"]
 layout_mode = 3
@@ -152,27 +153,29 @@ select_sound = ExtResource("25_day4d")
 
 [node name="BottomBar" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -551.0
-offset_top = 434.0
-offset_right = 549.0
-offset_bottom = 634.0
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -204.0
+offset_right = 550.0
+offset_bottom = -4.0
 grow_horizontal = 2
-theme_override_constants/separation = 200
+grow_vertical = 0
+alignment = 1
 
 [node name="Player1" parent="BottomBar" instance=ExtResource("4_u4l1u")]
-custom_minimum_size = Vector2(450, 200)
+custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 
 [node name="HSeparator" type="Control" parent="BottomBar"]
-visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Player2" parent="BottomBar" instance=ExtResource("4_u4l1u")]
-custom_minimum_size = Vector2(450, 200)
+custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 player_number = 2
 
@@ -188,18 +191,22 @@ offset_right = 20.0
 offset_bottom = 240.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="FightButton"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -83.0
-offset_top = 243.0
-offset_right = 83.0
-offset_bottom = 287.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PanelContainer" type="PanelContainer" parent="FightButton"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 21.0
+offset_right = 178.0
+offset_bottom = 105.0
+
+[node name="MarginContainer" type="MarginContainer" parent="FightButton/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="FightButton/PanelContainer/MarginContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("10_5viwe")
 theme_override_font_sizes/font_size = 50
 text = "Select STAGE!
@@ -219,3 +226,12 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("17_n7xrb")
 theme_override_font_sizes/font_size = 60
 text = "Choose your FIGHTER!"
+
+[node name="SceneButton" parent="." instance=ExtResource("29_iql2b")]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 563.0
+offset_right = -965.0
+offset_bottom = -7.0
+text = "Go to 
+main menu"

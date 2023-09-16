@@ -78,23 +78,7 @@ polygon = PackedVector2Array(607.333, 462, 610, 424.333, 613.667, 422, 608, 412.
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-174.667, 5.66667)
-polygon = PackedVector2Array(677.667, 390.333, 702, 389.667, 703.333, 401.667, 703.667, 404.667, 714, 405.333, 711, 412, 715.667, 416, 711.333, 421.667, 706.667, 424, 713, 439.333, 678.333, 441, 694.667, 425.333, 680.333, 420, 678.667, 408)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-174.667, 5.66667)
-polygon = PackedVector2Array(720.667, 405.667, 721.333, 390, 724, 387, 739.667, 387.667, 742.667, 390.333, 741.333, 396.333, 743, 401.667, 754.333, 402.333, 750.667, 408.333, 756.667, 411.667, 754.333, 414.667, 735.333, 416)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-174.667, 5.66667)
-polygon = PackedVector2Array(760.333, 386.333, 777.333, 386, 779, 395, 781, 400.667, 791, 401, 795.667, 412.333, 770.333, 414.667, 761, 403)
-
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-174.667, 5.66667)
-polygon = PackedVector2Array(799.667, 387, 801, 402.667, 818.333, 411.333, 832.333, 410.333, 830, 400.667, 813.667, 392.667, 812.333, 386.333)
-
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-174.667, 5.66667)
-polygon = PackedVector2Array(829.333, 384.667, 830.333, 397.333, 843.667, 410, 861.667, 405, 855.667, 402, 858.667, 397.667, 846.667, 396.333, 845.667, 384)
+polygon = PackedVector2Array(676.667, 389, 867, 384.667, 873, 414, 679.667, 437.667)
 
 [node name="BlastZone" type="Area2D" parent="."]
 script = ExtResource("3_wt2r4")

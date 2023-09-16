@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsh6c18m5k4id"
+path="res://.godot/imported/The Fence-[AudioTrimmer.com].mp3-a7ef8dbc3b06aba1efb6d58393a2636a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/LevelSelect/The Fence-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/The Fence-[AudioTrimmer.com].mp3-a7ef8dbc3b06aba1efb6d58393a2636a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

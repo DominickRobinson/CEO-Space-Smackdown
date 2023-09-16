@@ -29,7 +29,7 @@ extends RigidBody2D
 @export var ground_jump_boost = 600
 @export var aerial_jump_boost = 800
 @export var wall_jump_boost = 650
-@export var wall_jump_angle_degrees = 7
+@export var wall_jump_angle_degrees = 45
 
 @export var min_linear_velocity = 0
 @export var min_angular_velocity = 0

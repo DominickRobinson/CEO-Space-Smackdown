@@ -79,9 +79,6 @@ func _input(event: InputEvent) -> void:
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("attack1") or event.is_action_pressed("attack2"):
 		var player_index := 0
-		if player_pointers[player_index].selected:
-			var sound = player_pointers[player_index].target.select_sound
-			SoundManager.play_sound(sound)
 		player_pointers[player_index].toggle_selected()
 		player_pointers_selected[player_index] = not player_pointers_selected[player_index]
 		player_select_displays[player_index].select_character(player_pointers_selected[player_index])
@@ -122,9 +119,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack1_alt") or event.is_action_pressed("attack2_alt"):
 		var player_index := 1
 		player_pointers[player_index].toggle_selected()
-		if player_pointers[player_index].selected:
-			var sound = player_pointers[player_index].target.select_sound
-			SoundManager.play_sound(sound)
 		player_pointers_selected[player_index] = not player_pointers_selected[player_index]
 		player_select_displays[player_index].select_character(player_pointers_selected[player_index])
 		update_selection_status()

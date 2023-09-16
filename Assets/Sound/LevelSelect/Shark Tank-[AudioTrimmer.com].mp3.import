@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bothynh3kmc40"
+path="res://.godot/imported/Shark Tank-[AudioTrimmer.com].mp3-43cb8617a4536aa37f6570525bf0ec88.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/LevelSelect/Shark Tank-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/Shark Tank-[AudioTrimmer.com].mp3-43cb8617a4536aa37f6570525bf0ec88.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

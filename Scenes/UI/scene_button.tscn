@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnkq4nb6ti7p6"]
+
+[ext_resource type="FontFile" uid="uid://crkjtl7mr8ix1" path="res://Resources/Fonts/potato_sans/Potato_sans-Bold.otf" id="1_6xrjq"]
+[ext_resource type="Script" path="res://Scenes/UI/scene_button.gd" id="1_vbffs"]
+
+[node name="SceneButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = -888.0
+offset_bottom = -577.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6xrjq")
+theme_override_font_sizes/font_size = 30
+text = "Go to main menu"
+script = ExtResource("1_vbffs")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

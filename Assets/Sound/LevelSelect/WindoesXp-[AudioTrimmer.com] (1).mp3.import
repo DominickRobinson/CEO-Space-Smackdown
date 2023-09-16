@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rv1icqtgngfn"
+path="res://.godot/imported/WindoesXp-[AudioTrimmer.com] (1).mp3-da0207ad7aceff3e43daa5af406849fd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/LevelSelect/WindoesXp-[AudioTrimmer.com] (1).mp3"
+dest_files=["res://.godot/imported/WindoesXp-[AudioTrimmer.com] (1).mp3-da0207ad7aceff3e43daa5af406849fd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

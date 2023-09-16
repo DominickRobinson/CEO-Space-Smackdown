@@ -147,7 +147,7 @@ text = "Andrew Knowles - programmer"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_tnpqp")
 theme_override_font_sizes/font_size = 30
-text = "Gabriel Prado - artist"
+text = "Gabriel Prado - artist and sound designer"
 
 [node name="Peter" type="Label" parent="CreditsContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -480,8 +480,8 @@ text = "Player 2:
 Left - LEFT ARROW
 Right - RIGHT ARROW
 Jump - UP ARROW
-Attack1\\Select - PG UP
-Attack2 - PG DN
+Attack1\\Select - PG UP/BACKSLASH
+Attack2 - PG DN/SHIFT
 Taunt - DOWN ARROW
 "
 
