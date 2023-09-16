@@ -36,7 +36,7 @@ extends RigidBody2D
 @onready var sprite = $Sprite2D
 @onready var hitstun_timer = $HitStunTimer
 
-
+signal hit
 signal die
 
 var is_moving_right = false
@@ -47,10 +47,12 @@ var in_hitstun = false
 
 var damage = 0
 
+var player_stats_resource = preload("res://Scenes/UI/player_stats.tscn")
 
 
 func _ready():
 	set_sprite(texture_idle)
+	add_child(player_stats_resource.instantiate())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -218,6 +220,8 @@ func check_commands() -> void:
 		is_jumping = Input.is_action_pressed("jump_alt")
 
 func take_damage(amount:float, impulse:Vector2) -> void:
+	hit.emit()
+	
 	damage += amount
 	apply_central_impulse(impulse * damage / 100)
 	

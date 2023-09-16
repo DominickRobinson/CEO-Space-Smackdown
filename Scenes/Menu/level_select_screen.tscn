@@ -36,15 +36,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -482.0
-offset_top = -147.0
-offset_right = 42.0
-offset_bottom = 245.0
+offset_left = -403.0
+offset_top = -84.0
+offset_right = -11.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="IconGrid"]
+[node name="Bliss" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -55,7 +55,7 @@ script = ExtResource("3_yc4p8")
 character_scene = ExtResource("5_jte54")
 character_name = "WINDOWS XD"
 
-[node name="TextureRect2" type="TextureRect" parent="IconGrid"]
+[node name="Mars" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -66,7 +66,7 @@ script = ExtResource("3_yc4p8")
 character_scene = ExtResource("8_15pj2")
 character_name = "Mars"
 
-[node name="TextureRect3" type="TextureRect" parent="IconGrid"]
+[node name="Moon" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -77,7 +77,7 @@ script = ExtResource("3_yc4p8")
 character_scene = ExtResource("10_divac")
 character_name = "Moon"
 
-[node name="TextureRect4" type="TextureRect" parent="IconGrid"]
+[node name="SharkTank" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -105,21 +105,12 @@ texture = SubResource("PlaceholderTexture2D_0xtxj")
 expand_mode = 2
 script = ExtResource("3_yc4p8")
 
-[node name="TextureRect7" type="TextureRect" parent="IconGrid"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_0xtxj")
-expand_mode = 2
-script = ExtResource("3_yc4p8")
-
 [node name="Display" parent="." instance=ExtResource("4_khslj")]
 layout_mode = 0
-offset_left = 725.0
-offset_top = 262.0
-offset_right = 925.0
-offset_bottom = 462.0
+offset_left = 738.0
+offset_top = 267.0
+offset_right = 938.0
+offset_bottom = 467.0
 player_number = 0
 
 [node name="FightButton" type="Control" parent="."]

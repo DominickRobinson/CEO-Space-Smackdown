@@ -10,7 +10,7 @@ extends Node2D
 @onready var end_screen = $PlayerWin
 @onready var end_anim = $PlayerWin/AnimationPlayer
 
-
+var game_over = false
 
 func _ready():
 	var p1 = LoadManager.player1_character.instantiate() as Player
@@ -35,6 +35,8 @@ func _ready():
 	get_tree().current_scene.add_child(load("res://Scenes/UI/fight.tscn").instantiate())
 
 func win1():
+	if game_over: return
+	game_over = true
 	end_screen.show()
 	end_anim.play("show")
 	end_label.text = "Player 1 wins!"
@@ -43,6 +45,8 @@ func win1():
 
 
 func win2():
+	if game_over: return
+	game_over = true
 	end_screen.show()
 	end_anim.play("show")
 	end_label.text = "Player 2 wins!"
