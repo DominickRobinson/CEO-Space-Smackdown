@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://emu8vshkmy0t"]
+[gd_scene load_steps=6 format=3 uid="uid://emu8vshkmy0t"]
 
 [ext_resource type="PackedScene" uid="uid://cu7tyxjgkvb2y" path="res://Scenes/Players/player.tscn" id="1_111kg"]
 [ext_resource type="PackedScene" uid="uid://b51bi3vgp08e" path="res://Scenes/Weapons/hands.tscn" id="2_1hcig"]
 [ext_resource type="PackedScene" uid="uid://cfyhnkpeyqw4w" path="res://Scenes/Objects/cybertruck.tscn" id="2_iw2vg"]
 [ext_resource type="PackedScene" uid="uid://csuqvbnfdxkhx" path="res://Scenes/Objects/chair.tscn" id="3_2klqh"]
+[ext_resource type="PackedScene" uid="uid://cxwi8mlky7iyv" path="res://Scenes/Weapons/shark.tscn" id="3_6k48s"]
 
 [node name="test" type="Node2D"]
 
@@ -16,12 +17,15 @@ polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 1087, -258, 1178, -263, 1179, 150, -97, 135, -95, -508, 53, -493)
 
-[node name="Player" parent="." node_paths=PackedStringArray("weapon1") instance=ExtResource("1_111kg")]
+[node name="Player" parent="." node_paths=PackedStringArray("weapon1", "weapon2") instance=ExtResource("1_111kg")]
 position = Vector2(299, 125)
 weapon1 = NodePath("Hands")
+weapon2 = NodePath("Shark")
 
 [node name="Hands" parent="Player" instance=ExtResource("2_1hcig")]
 position = Vector2(69, -46)
+
+[node name="Shark" parent="Player" instance=ExtResource("3_6k48s")]
 
 [node name="Cybertruck" parent="." instance=ExtResource("2_iw2vg")]
 position = Vector2(903, 390)
