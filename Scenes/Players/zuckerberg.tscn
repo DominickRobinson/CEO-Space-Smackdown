@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://birrydot1f25b"]
+[gd_scene load_steps=16 format=3 uid="uid://birrydot1f25b"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_k67xw"]
 [ext_resource type="Texture2D" uid="uid://cabf72oo7essf" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeIdle.png" id="2_2rxwv"]
@@ -8,8 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cow04uiq1ts0n" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeAttack2.png" id="5_qh40v"]
 [ext_resource type="Texture2D" uid="uid://bijfqia774ahw" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeTaunt.png" id="6_aurti"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_ny0c6"]
+[ext_resource type="AudioStream" uid="uid://cri45vkrxvx4b" path="res://Assets/Sound/Grunts and Shit/Ouch.mp3" id="7_y6xei"]
+[ext_resource type="AudioStream" uid="uid://b6um8iwqntpex" path="res://Assets/Sound/ZuccSounds/ZuccAttack1.mp3" id="8_lrk76"]
 [ext_resource type="PackedScene" uid="uid://1tjj3f83uxoa" path="res://Scenes/Weapons/hands_meta.tscn" id="9_4ljin"]
+[ext_resource type="AudioStream" uid="uid://dmxv2h3sdxd0b" path="res://Assets/Sound/ZuccSounds/ZuccAttack2.mp3" id="9_aenlr"]
 [ext_resource type="PackedScene" uid="uid://djkhsgccrpxdv" path="res://Scenes/Weapons/meta_quest_controller.tscn" id="9_ndjst"]
+[ext_resource type="AudioStream" uid="uid://ca6s4yn6k6fbj" path="res://Assets/Sound/ZuccSounds/ZuccSlurp.mp3" id="10_vg6m4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
 radius = 32.0
@@ -21,6 +25,10 @@ texture_hit = ExtResource("3_e8w2w")
 texture_attack1 = ExtResource("4_illew")
 texture_attack2 = ExtResource("5_qh40v")
 texture_taunt = ExtResource("6_aurti")
+sound_hit = ExtResource("7_y6xei")
+sound_attack1 = ExtResource("8_lrk76")
+sound_attack2 = ExtResource("9_aenlr")
+sound_taunt = ExtResource("10_vg6m4")
 weapon1 = NodePath("MetaQuestController")
 weapon2 = NodePath("HandsBasketball")
 

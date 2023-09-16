@@ -1,7 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://wfl6o0vr52ob"]
+[gd_scene load_steps=7 format=3 uid="uid://wfl6o0vr52ob"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/hammer.gd" id="1_mkx04"]
 [ext_resource type="Texture2D" uid="uid://bafdhxhaocns6" path="res://Assets/Art/Weapons/tail.png" id="2_sciqq"]
+[ext_resource type="PackedScene" uid="uid://fx7jl6brm37a" path="res://Scenes/Weapons/hurt_box.tscn" id="3_qlsrr"]
+
+[sub_resource type="Animation" id="Animation_1peua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.349066]
+}
 
 [sub_resource type="Animation" id="Animation_xsiqy"]
 resource_name = "wag"
@@ -20,21 +36,6 @@ tracks/0/keys = {
 "values": [0.349066, 0.610865, 0.349066, 0.0872665, 0.349066]
 }
 
-[sub_resource type="Animation" id="Animation_1peua"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.349066]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rnxnn"]
 _data = {
 "RESET": SubResource("Animation_1peua"),
@@ -45,6 +46,8 @@ _data = {
 rotation = 0.349066
 polygon = PackedVector2Array(-6.69064, -13.7563, -49, -4, -91, 14, -168, 40, -207, 59, -223, 80, -233, 93, -237, 103, -243, 112, -236, 111, -228, 97, -218, 86, -206, 69, -191, 61, -141, 45, -107, 38, -74, 28, -39, 16, -23, 12, 1, 10)
 script = ExtResource("1_mkx04")
+damage = 30.0
+impulse_length = 1500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-122, 49)
@@ -56,3 +59,8 @@ speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_rnxnn")
 }
+
+[node name="HurtBox" parent="." instance=ExtResource("3_qlsrr")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PackedVector2Array(-6.69064, -13.7563, -49, -4, -91, 14, -168, 40, -207, 59, -223, 80, -233, 93, -237, 103, -243, 112, -236, 111, -228, 97, -218, 86, -206, 69, -191, 61, -141, 45, -107, 38, -74, 28, -39, 16, -23, 12, 1, 10)

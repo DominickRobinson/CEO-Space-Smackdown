@@ -1,18 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6fmrjma4hpp8"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/car.gd" id="1_1om7i"]
-[ext_resource type="Texture2D" path="res://Assets/Art/amazon-truck.png" id="2_mpv45"]
+[ext_resource type="Texture2D" uid="uid://7ntro7rmqcpw" path="res://Assets/Art/Objects/AmazonTRUCK.png" id="2_s871e"]
 [ext_resource type="PhysicsMaterial" path="res://Resources/wheel.tres" id="3_er5gr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2mv1"]
-size = Vector2(76.75, 18.75)
+size = Vector2(98.375, 33.375)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_urbp6"]
 radius = 15.0
 
-[node name="Cybertruck" type="Node2D"]
+[node name="AmazonTruck" type="Node2D"]
 script = ExtResource("1_1om7i")
-wheel_damping = 0.7
+wheel_power = 2000.0
+wheel_damping = 0.3
 
 [node name="Body" type="RigidBody2D" parent="."]
 mass = 5.0
@@ -20,17 +21,18 @@ center_of_mass_mode = 1
 center_of_mass = Vector2(0, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="Body"]
-position = Vector2(9, 13)
-scale = Vector2(0.038, 0.032)
-texture = ExtResource("2_mpv45")
+position = Vector2(18, -1)
+scale = Vector2(0.465054, 0.549217)
+texture = ExtResource("2_s871e")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+polygon = PackedVector2Array(-111, 37, -105, 1, -93, -3, -68, -53, -32, -68, -33, 24, 90, 22, 89, -67, 132, -65, 132, 33, 111, 41, 100, 18, 57, 33, -40, 33, -57, 25, -81, 18)
 
 [node name="Area2D" type="Area2D" parent="Body"]
 position = Vector2(10, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D"]
-position = Vector2(-3, 6)
+position = Vector2(15, -5)
 shape = SubResource("RectangleShape2D_k2mv1")
 
 [node name="Wheel" type="RigidBody2D" parent="."]

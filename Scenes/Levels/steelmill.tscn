@@ -1,0 +1,2290 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8cgwgj7a26ka"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_uno1f"]
+[ext_resource type="Texture2D" uid="uid://chhsrkte0xc3r" path="res://Assets/Art/Backgrounds/SteelMill.png" id="2_iflbn"]
+[ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_ki1ix"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_na45h"]
+[ext_resource type="PackedScene" uid="uid://c6fmrjma4hpp8" path="res://Scenes/Objects/amazon_truck.tscn" id="5_3sljk"]
+[ext_resource type="PackedScene" uid="uid://bbrlh2nn2leaj" path="res://Scenes/Weapons/Bullets/flame.tscn" id="6_hojr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
+size = Vector2(146, 2826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pye1"]
+size = Vector2(153, 2860)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl1gh"]
+size = Vector2(3906.5, 377)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky0ef"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_v7t3t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_143di"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.411765)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtn10"]
+_data = {
+"RESET": SubResource("Animation_v7t3t"),
+"show": SubResource("Animation_143di")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_uno1f")
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1741, 1037)
+scale = Vector2(2.79297, 1.98701)
+texture = ExtResource("2_iflbn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(271, 274)
+anchor_mode = 0
+zoom = Vector2(0.4, 0.45)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-47, 26)
+polygon = PackedVector2Array(249.333, 54.6667, 246, 83.6667, 265, 86.6667, 239.667, 107.333, 317, 125, 312.667, 154, 285, 164.667, 285.667, 191, 319, 196.667, 318.333, 207, 287, 211.333, 273, 224, 295, 224, 291.333, 244, 384.333, 288, 391.333, 93.6667, 415.333, 96.6667, 405.333, 296.667, 426.667, 296.333, 433.667, 234.667, 475, 242.667, 477.667, 300.667, 526.667, 319, 584, 315.667, 585.333, 306.333, 616.667, 305.667, 613, 315.667, 626, 310.667, 651.333, 353, 670, 357.333, 675.333, 351, 723, 349, 728, 373, 750, 353.333, 779.667, 313.667, 798, 313.667, 798, 298.667, 787.667, 285.667, 844.333, 277.333, 871.667, 285, 870.333, 292.333, 857, 298, 866.333, 369.667, 912.333, 347.333, 974, 352.333, 988, 479.333, 1128.33, 479.333, 1107.33, 590, 135.333, 587.667, 126.333, 50)
+
+[node name="BlastZone" type="Area2D" parent="."]
+script = ExtResource("3_ki1ix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(211, 784)
+shape = SubResource("RectangleShape2D_2nw5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(3329, 648)
+shape = SubResource("RectangleShape2D_6pye1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1829, 1923)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1890, -58)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="PlayerOneSpawn" type="Node2D" parent="."]
+position = Vector2(1213, 648)
+
+[node name="PlayerTwoSpawn" type="Node2D" parent="."]
+position = Vector2(2390, 831)
+
+[node name="PlayerWin" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerWin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ky0ef")
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerWin/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerWin/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_na45h")
+theme_override_font_sizes/font_size = 100
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerWin"]
+libraries = {
+"": SubResource("AnimationLibrary_qtn10")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AmazonTruck" parent="Node2D" instance=ExtResource("5_3sljk")]
+position = Vector2(1785, 617)
+
+[node name="Node2D" type="Node2D" parent="Node2D"]
+
+[node name="Flame" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D2" type="Node2D" parent="Node2D"]
+position = Vector2(58, -920)
+
+[node name="Flame" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D2" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D3" type="Node2D" parent="Node2D"]
+position = Vector2(-59, -1634)
+
+[node name="Flame" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D3" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D4" type="Node2D" parent="Node2D"]
+position = Vector2(-378, -1387)
+
+[node name="Flame" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D4" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D5" type="Node2D" parent="Node2D"]
+position = Vector2(-469, -2116)
+
+[node name="Flame" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D5" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D6" type="Node2D" parent="Node2D"]
+position = Vector2(305, -1302)
+
+[node name="Flame" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D6" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D7" type="Node2D" parent="Node2D"]
+position = Vector2(363, -2222)
+
+[node name="Flame" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D7" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D8" type="Node2D" parent="Node2D"]
+position = Vector2(246, -2936)
+
+[node name="Flame" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D8" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D9" type="Node2D" parent="Node2D"]
+position = Vector2(-73, -2689)
+
+[node name="Flame" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D9" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D10" type="Node2D" parent="Node2D"]
+position = Vector2(-164, -3418)
+
+[node name="Flame" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D10" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D11" type="Node2D" parent="Node2D"]
+position = Vector2(65, -2782)
+
+[node name="Flame" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D11" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D12" type="Node2D" parent="Node2D"]
+position = Vector2(123, -3702)
+
+[node name="Flame" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D12" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D13" type="Node2D" parent="Node2D"]
+position = Vector2(6, -4416)
+
+[node name="Flame" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D13" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D14" type="Node2D" parent="Node2D"]
+position = Vector2(-313, -4169)
+
+[node name="Flame" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D14" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D15" type="Node2D" parent="Node2D"]
+position = Vector2(-404, -4898)
+
+[node name="Flame" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D15" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D16" type="Node2D" parent="Node2D"]
+position = Vector2(55, -444)
+
+[node name="Flame" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D16" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D17" type="Node2D" parent="Node2D"]
+position = Vector2(113, -1364)
+
+[node name="Flame" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D17" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D18" type="Node2D" parent="Node2D"]
+position = Vector2(-4, -2078)
+
+[node name="Flame" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D18" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D19" type="Node2D" parent="Node2D"]
+position = Vector2(-323, -1831)
+
+[node name="Flame" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D19" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[node name="Node2D20" type="Node2D" parent="Node2D"]
+position = Vector2(-414, -2560)
+
+[node name="Flame" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(917, 387)
+
+[node name="Flame2" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1188, 344)
+
+[node name="Flame3" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1324, 341)
+
+[node name="Flame4" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 339)
+
+[node name="Flame5" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1815, 327)
+
+[node name="Flame6" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1637, 351)
+
+[node name="Flame7" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1909, 330)
+
+[node name="Flame8" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2028, 339)
+
+[node name="Flame9" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2183, 342)
+
+[node name="Flame10" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2342, 339)
+
+[node name="Flame11" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2529, 347)
+
+[node name="Flame12" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2661, 347)
+
+[node name="Flame13" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2402, 453)
+
+[node name="Flame14" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2280, 457)
+
+[node name="Flame15" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1968, 457)
+
+[node name="Flame16" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2054, 449)
+
+[node name="Flame17" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1834, 439)
+
+[node name="Flame18" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1594, 469)
+
+[node name="Flame19" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1429, 450)
+
+[node name="Flame20" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1264, 474)
+
+[node name="Flame21" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(926, 516)
+
+[node name="Flame22" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(908, 600)
+
+[node name="Flame23" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1245, 617)
+
+[node name="Flame24" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1371, 621)
+
+[node name="Flame25" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1504, 564)
+
+[node name="Flame26" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1627, 606)
+
+[node name="Flame27" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1999, 553)
+
+[node name="Flame28" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2126, 564)
+
+[node name="Flame29" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2218, 556)
+
+[node name="Flame30" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2312, 559)
+
+[node name="Flame31" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2440, 547)
+
+[node name="Flame32" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2569, 455)
+
+[node name="Flame33" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2611, 555)
+
+[node name="Flame34" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(2533, 613)
+
+[node name="Flame35" parent="Node2D/Node2D20" instance=ExtResource("6_hojr5")]
+position = Vector2(1952, -1472)
+
+[connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

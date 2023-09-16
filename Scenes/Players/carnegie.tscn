@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp2txumtf1fvc"]
+[gd_scene load_steps=15 format=3 uid="uid://bp2txumtf1fvc"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_ix6sf"]
 [ext_resource type="Texture2D" uid="uid://ct12xsfypsjmb" path="res://Assets/Art/Characters/Carnegie/CarnegieHit.png" id="3_kr2gi"]
@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://ducptto5orfai" path="res://Assets/Art/Characters/Carnegie/CarnegieTaunt.png" id="6_tu5r2"]
 [ext_resource type="Texture2D" uid="uid://c83awmwsxuqo6" path="res://Assets/Art/Characters/Carnegie/CarnegieIdle.png" id="7_8dyjk"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_4451h"]
+[ext_resource type="AudioStream" uid="uid://bde0yhyu0tj7n" path="res://Assets/Sound/Carnegie/HeartInWork.mp3" id="7_h4i7b"]
+[ext_resource type="AudioStream" uid="uid://clhyqb6dq8np3" path="res://Assets/Sound/Grunts and Shit/Ehh.mp3" id="7_hpnho"]
+[ext_resource type="AudioStream" uid="uid://bd322b8lmg5pg" path="res://Assets/Sound/Carnegie/GoTartans.mp3" id="8_fmfos"]
 [ext_resource type="PackedScene" uid="uid://csa0ip7vnq2ny" path="res://Scenes/Weapons/heart_thrower.tscn" id="8_l61eq"]
+[ext_resource type="AudioStream" uid="uid://cycl6ahoglmge" path="res://Assets/Sound/Carnegie/Unioons.mp3" id="9_6qx4o"]
 [ext_resource type="PackedScene" uid="uid://cy43qiwdnt8ga" path="res://Scenes/Weapons/girder.tscn" id="9_jc67o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
@@ -20,6 +24,10 @@ texture_hit = ExtResource("3_kr2gi")
 texture_attack1 = ExtResource("4_crxnl")
 texture_attack2 = ExtResource("5_q5nkv")
 texture_taunt = ExtResource("6_tu5r2")
+sound_hit = ExtResource("7_hpnho")
+sound_attack1 = ExtResource("7_h4i7b")
+sound_attack2 = ExtResource("8_fmfos")
+sound_taunt = ExtResource("9_6qx4o")
 weapon1 = NodePath("HeartThrower")
 weapon2 = NodePath("Girder")
 max_linear_velocity = 1250

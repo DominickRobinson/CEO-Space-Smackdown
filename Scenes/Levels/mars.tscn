@@ -57,31 +57,31 @@ _data = {
 script = ExtResource("1_0ay28")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
-position = Vector2(1754, 1127)
-scale = Vector2(5, 3.467)
+position = Vector2(1811, 1086)
+scale = Vector2(3.46474, 2.74598)
 texture = ExtResource("2_a36qd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(462, 623)
+position = Vector2(883, 701)
 anchor_mode = 0
-zoom = Vector2(0.45, 0.65)
+zoom = Vector2(0.623, 0.9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(3, 3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-47, 26)
-polygon = PackedVector2Array(169, 391, 195, 404, 204, 398.333, 232, 404.333, 259.667, 400.333, 268.333, 390, 298.333, 390.333, 314, 397, 332.333, 392.667, 344.333, 397, 347.667, 403.333, 364, 400, 374.667, 397, 379.667, 401, 386.333, 398.333, 406, 401.333, 418.667, 399.333, 439.667, 396, 446.667, 401, 459.333, 397.333, 477.333, 402.333, 492, 395.667, 498.667, 397, 509.333, 389.333, 517, 391.333, 523.333, 388.333, 548.333, 387.667, 553.333, 393, 562.333, 399, 573.667, 398.333, 580.667, 403.667, 591, 402, 605.333, 399.333, 611.333, 397, 612.667, 401.667, 640, 404.667, 656.667, 399.667, 674, 403.667, 684.667, 401, 703, 405, 726.667, 402.333, 754.333, 404.667, 769, 410.667, 794.667, 405.333, 864.667, 404, 878.333, 388.333, 888, 389.333, 913.333, 370, 936.333, 369, 941.667, 376.667, 960.667, 375.333, 971, 377.667, 982.667, 374, 1032.33, 372.667, 1048, 375, 1060.67, 384, 1069, 393.333, 1092, 394.333, 1092.33, 529.333, 169.333, 530.333)
+polygon = PackedVector2Array(331.667, 371.333, 347.333, 378.667, 352.667, 375.667, 361.397, 375.62, 372.667, 380.667, 377.333, 377, 391.833, 376.888, 400.333, 368, 418.266, 368.134, 428.333, 373.333, 441, 371, 450.667, 372, 454, 377, 468.601, 376.871, 472.667, 374.333, 483.333, 374, 489.333, 376.333, 502.161, 376.229, 515.667, 373.667, 522.667, 376, 530.333, 374, 537.333, 374.333, 545, 377, 555, 372, 560.333, 372, 566, 367.333, 591.667, 366.667, 601.667, 373.667, 609.333, 374.333, 614.333, 378.333, 619.915, 378.242, 624.333, 375.333, 630.333, 375, 633.333, 377.667, 635.333, 376, 638.667, 378, 655, 378.333, 664.667, 376.333, 677.333, 379.333, 684.333, 377.667, 691.333, 378.667, 697.333, 380.333, 702.667, 378.333, 712.667, 378.333, 725.333, 377.667, 749.667, 384.667, 761.333, 381, 771.333, 379.667, 807, 378.333, 814.667, 381.667, 819.667, 384, 829, 381.333, 830.667, 363.333, 843.333, 352.667, 859, 351.667, 868.333, 358, 880, 357.333, 886.333, 359.667, 895, 355.333, 911.333, 354, 918.272, 355.817, 932.667, 354.667, 948.333, 363.333, 954, 373, 994.667, 374, 983.333, 462.333, 316.667, 454.667)
 
 [node name="BlastZone" type="Area2D" parent="."]
 script = ExtResource("3_rfe80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(277, 659)
+position = Vector2(770, 699)
 shape = SubResource("RectangleShape2D_2nw5l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(3201, 615)
+position = Vector2(2880, 668)
 shape = SubResource("RectangleShape2D_6pye1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
@@ -93,10 +93,10 @@ position = Vector2(1827, 307)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
-position = Vector2(812, 951)
+position = Vector2(1296, 1023)
 
 [node name="PlayerTwoSpawn" type="Node2D" parent="."]
-position = Vector2(2574, 969)
+position = Vector2(2348, 1054)
 
 [node name="PlayerWin" type="CanvasLayer" parent="."]
 

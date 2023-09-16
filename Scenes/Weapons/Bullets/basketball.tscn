@@ -14,7 +14,6 @@ mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_2mh1r")
 script = ExtResource("1_cvqvo")
 free_on_impact = false
-damage = 5.0
 impulse_length = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

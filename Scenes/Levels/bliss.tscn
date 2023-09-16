@@ -58,45 +58,46 @@ script = ExtResource("1_424jw")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1775.5, 1059.5)
-scale = Vector2(12.8967, 8.94191)
+scale = Vector2(4, 3)
 texture = ExtResource("2_xqnnn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(90, 48)
+position = Vector2(1230, 768)
 anchor_mode = 0
-zoom = Vector2(0.35, 0.35)
+zoom = Vector2(1.1, 1.1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(3, 3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-47, 26)
-polygon = PackedVector2Array(-3, 360, 81, 354, 198.333, 349.333, 361.333, 348, 582, 358, 778, 373, 1001, 397, 1298.67, 420.333, 1312.67, 675, -3, 649)
+position = Vector2(387.333, 246.667)
+scale = Vector2(0.33, 0.33)
+polygon = PackedVector2Array(-3, 360, 80.8081, 354.545, 196.97, 340.404, 361.333, 348, 582, 358, 778, 373, 1001, 397, 1296.97, 431.818, 1312.67, 675, -3, 649)
 
 [node name="BlastZone" type="Area2D" parent="."]
 script = ExtResource("3_8ked8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(-92, 597)
+position = Vector2(1084, 781)
 shape = SubResource("RectangleShape2D_2nw5l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(3714, 613)
+position = Vector2(2477, 753)
 shape = SubResource("RectangleShape2D_6pye1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(1745, 2162)
+position = Vector2(1816, 1905)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(1768, -1081)
+position = Vector2(2047, 498)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
-position = Vector2(680, 480)
+position = Vector2(1396, 928)
 
 [node name="PlayerTwoSpawn" type="Node2D" parent="."]
-position = Vector2(2442, 498)
+position = Vector2(2127, 979)
 
 [node name="PlayerWin" type="CanvasLayer" parent="."]
 

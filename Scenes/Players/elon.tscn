@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1kawynk1ca0y"]
+[gd_scene load_steps=14 format=3 uid="uid://b1kawynk1ca0y"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_ynu5j"]
 [ext_resource type="Texture2D" uid="uid://dgyc2ikmm7dqe" path="res://Assets/Art/Characters/Musk/MuskIdle.png" id="2_b7mbc"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cylbe1lktidps" path="res://Assets/Art/Characters/Musk/MuskAttack2.png" id="5_cr1q2"]
 [ext_resource type="Texture2D" uid="uid://b8ngdoeir8h2s" path="res://Assets/Art/Characters/Musk/MuskTaunt.png" id="6_3exl7"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_5p571"]
+[ext_resource type="AudioStream" uid="uid://n3cvvns2qmwl" path="res://Assets/Sound/Grunts and Shit/Nooo.mp3" id="7_8qd5w"]
 [ext_resource type="PackedScene" uid="uid://cdwc6wmvr5e5u" path="res://Scenes/Weapons/flamethrower.tscn" id="8_4qfmq"]
+[ext_resource type="AudioStream" uid="uid://bj5snwtodw2cm" path="res://Assets/Sound/Musk/Easy.mp3" id="8_vrg5u"]
+[ext_resource type="AudioStream" uid="uid://cjvylr0lq7wc1" path="res://Assets/Sound/Musk/Yeah.mp3" id="9_hk1i0"]
 [ext_resource type="PackedScene" uid="uid://kv7kvm4y5jch" path="res://Scenes/Weapons/hammer.tscn" id="9_uj73y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
@@ -20,6 +23,10 @@ texture_hit = ExtResource("3_sorfl")
 texture_attack1 = ExtResource("4_y60iq")
 texture_attack2 = ExtResource("5_cr1q2")
 texture_taunt = ExtResource("6_3exl7")
+sound_hit = ExtResource("7_8qd5w")
+sound_attack1 = ExtResource("8_vrg5u")
+sound_attack2 = ExtResource("9_hk1i0")
+sound_taunt = ExtResource("8_vrg5u")
 weapon1 = NodePath("Flamethrower")
 weapon2 = NodePath("Hammer")
 
