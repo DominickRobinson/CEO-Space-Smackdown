@@ -1,6 +1,11 @@
 extends Node2D
 
 
+
+@export var damage : float = 30
+@export var impulse_length : float = 2000
+
+
 @export var wheel_power : float = 1000
 @export var wheel_damping : float = 0.8
 @onready var wheel1 = $Wheel
@@ -16,6 +21,12 @@ func _ready():
 	
 	audio_player = AudioStreamPlayer.new()
 	audio_player.stream = load("res://Assets/Sound/Items/CarVroom.mp3")
+	
+	var hurtbox = get_node("HurtBox")
+	if is_instance_valid(hurtbox):
+		hurtbox.damage = damage
+		hurtbox.impulse_length = impulse_length
+
 
 func _physics_process(delta):
 	for b in area.get_overlapping_bodies():

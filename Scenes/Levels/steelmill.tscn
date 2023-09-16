@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8cgwgj7a26ka"]
+[gd_scene load_steps=15 format=3 uid="uid://b8cgwgj7a26ka"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_uno1f"]
 [ext_resource type="Texture2D" uid="uid://chhsrkte0xc3r" path="res://Assets/Art/Backgrounds/SteelMill.png" id="2_iflbn"]
+[ext_resource type="AudioStream" uid="uid://cuqlu2hsi73vb" path="res://Assets/Music/Rapid Attack.mp3" id="2_tbtgh"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_ki1ix"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_na45h"]
 [ext_resource type="PackedScene" uid="uid://c6fmrjma4hpp8" path="res://Scenes/Objects/amazon_truck.tscn" id="5_3sljk"]
@@ -57,6 +58,7 @@ _data = {
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_uno1f")
+music = ExtResource("2_tbtgh")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1741, 1037)
@@ -98,7 +100,7 @@ shape = SubResource("RectangleShape2D_sl1gh")
 position = Vector2(1213, 648)
 
 [node name="PlayerTwoSpawn" type="Node2D" parent="."]
-position = Vector2(2390, 831)
+position = Vector2(2169, 895)
 
 [node name="PlayerWin" type="CanvasLayer" parent="."]
 

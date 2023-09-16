@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnttfbi0bngxm" path="res://Assets/Art/Characters/Zucc/ZuccAttack2.png" id="5_aglkx"]
 [ext_resource type="Texture2D" uid="uid://cfxhe0jlmkrcm" path="res://Assets/Art/Characters/Zucc/ZuccTaunt.png" id="6_2ord4"]
 [ext_resource type="Texture2D" uid="uid://b07bj86lbf1bb" path="res://Assets/Art/Characters/Zucc/ZuccIdle.png" id="7_4vqde"]
-[ext_resource type="AudioStream" uid="uid://cri45vkrxvx4b" path="res://Assets/Sound/Grunts and Shit/Ouch.mp3" id="7_i1ckv"]
+[ext_resource type="AudioStream" uid="uid://psxoprj4df57" path="res://Assets/Sound/Grunts and Shit/Ouch.mp3" id="7_i1ckv"]
 [ext_resource type="AudioStream" uid="uid://b6um8iwqntpex" path="res://Assets/Sound/ZuccSounds/ZuccAttack1.mp3" id="8_npsyo"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="8_rxr4i"]
 [ext_resource type="AudioStream" uid="uid://dmxv2h3sdxd0b" path="res://Assets/Sound/ZuccSounds/ZuccAttack2.mp3" id="9_cgprd"]
