@@ -136,7 +136,7 @@ func create_select_pointer(color: Color = Color.WHITE, ind: int = -1) -> void:
 	add_child(pointer_instance)
 	pointer_instance.target = icon_grid.get_child(ind) as CharacterSelectIcon
 	player_pointers_selected.append(false)
-	player_select_displays[ind].set_character(icon_grid.get_child(0))
+	player_select_displays[ind].set_character(icon_grid.get_child(ind))
 
 func update_selection_status() -> void:
 	LoadManager.set_characters(player_pointers[0].target.character_scene, player_pointers[1].target.character_scene)

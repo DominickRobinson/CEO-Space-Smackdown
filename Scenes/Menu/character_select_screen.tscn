@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
 [ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_52sur"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
-[ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
+[ext_resource type="PackedScene" uid="uid://c3n4yuiwpc73k" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2vdp"]
 
