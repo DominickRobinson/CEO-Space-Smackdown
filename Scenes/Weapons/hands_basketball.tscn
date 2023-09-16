@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://u0s8cljfvj2b" path="res://Scenes/Weapons/basketball.tscn" id="2_aon4n"]
 [ext_resource type="Texture2D" uid="uid://dwrk6y6qql05n" path="res://Assets/Art/Weapons/hands.png" id="3_i2gwh"]
 
-[node name="Hands" type="Node2D"]
+[node name="HandsBasketball" type="Node2D"]
 script = ExtResource("1_btstr")
 bullet_resource = ExtResource("2_aon4n")
 
