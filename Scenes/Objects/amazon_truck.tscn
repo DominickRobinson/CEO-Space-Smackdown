@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6fmrjma4hpp8"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/car.gd" id="1_1om7i"]
+[ext_resource type="Texture2D" path="res://Assets/Art/amazon-truck.png" id="2_mpv45"]
+[ext_resource type="PhysicsMaterial" path="res://Resources/wheel.tres" id="3_er5gr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2mv1"]
+size = Vector2(76.75, 18.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_urbp6"]
+radius = 15.0
+
+[node name="Cybertruck" type="Node2D"]
+script = ExtResource("1_1om7i")
+wheel_damping = 0.7
+
+[node name="Body" type="RigidBody2D" parent="."]
+mass = 5.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+position = Vector2(9, 13)
+scale = Vector2(0.038, 0.032)
+texture = ExtResource("2_mpv45")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+
+[node name="Area2D" type="Area2D" parent="Body"]
+position = Vector2(10, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D"]
+position = Vector2(-3, 6)
+shape = SubResource("RectangleShape2D_k2mv1")
+
+[node name="Wheel" type="RigidBody2D" parent="."]
+position = Vector2(-76, 41)
+physics_material_override = ExtResource("3_er5gr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel"]
+shape = SubResource("CircleShape2D_urbp6")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Wheel"]
+node_a = NodePath("../../Body")
+node_b = NodePath("..")
+
+[node name="Wheel2" type="RigidBody2D" parent="."]
+position = Vector2(90, 41)
+physics_material_override = ExtResource("3_er5gr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel2"]
+shape = SubResource("CircleShape2D_urbp6")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Wheel2"]
+node_a = NodePath("../../Body")
+node_b = NodePath("..")

@@ -1,26 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu7tyxjgkvb2y"]
+[gd_scene load_steps=4 format=3 uid="uid://cu7tyxjgkvb2y"]
 
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_etyra"]
-[ext_resource type="Texture2D" uid="uid://bhim5eo3kojvx" path="res://icon.svg" id="2_ivtbk"]
-[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="3_n1snj"]
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_vxcpo"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="3_levl4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
 radius = 32.0
 
 [node name="Player" type="RigidBody2D"]
-script = ExtResource("1_etyra")
+script = ExtResource("1_vxcpo")
 
-[node name="Sprites" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ivtbk")
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_thyhi")
 
 [node name="RayCast2Ds" type="Node2D" parent="."]
-script = ExtResource("3_n1snj")
+script = ExtResource("3_levl4")
 
 [node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
 target_position = Vector2(0, 36)
@@ -30,3 +25,6 @@ target_position = Vector2(-36, 0)
 
 [node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
 target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5

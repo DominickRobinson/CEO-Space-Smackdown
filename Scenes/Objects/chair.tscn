@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://csuqvbnfdxkhx"]
+
+[ext_resource type="Texture2D" uid="uid://c63b0un4a70jo" path="res://Assets/Art/Objects/office-chair.png" id="1_l6u11"]
+
+[node name="Chair" type="RigidBody2D"]
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 30)
+gravity_scale = 2.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-24, 42, -26, -18, -13, -44, 15, -44, 29, -17, 27, 42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_l6u11")

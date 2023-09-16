@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvkukm1i5g3i"]
+[gd_scene load_steps=6 format=3 uid="uid://cfyhnkpeyqw4w"]
 
-[ext_resource type="Script" path="res://Scenes/car.gd" id="1_5wrbs"]
-[ext_resource type="Texture2D" uid="uid://cmxykfrt2lr7c" path="res://Assets/Art/car.svg" id="1_hvg2b"]
-[ext_resource type="PhysicsMaterial" path="res://Resources/wheel.tres" id="2_eh5s3"]
+[ext_resource type="Script" path="res://Scenes/Objects/car.gd" id="1_ydsad"]
+[ext_resource type="Texture2D" uid="uid://nk5nilu3ckqi" path="res://Assets/Art/Objects/cybertruck.png" id="2_jy4pu"]
+[ext_resource type="PhysicsMaterial" path="res://Resources/wheel.tres" id="3_m6qug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2mv1"]
 size = Vector2(76.75, 18.75)
@@ -10,8 +10,8 @@ size = Vector2(76.75, 18.75)
 [sub_resource type="CircleShape2D" id="CircleShape2D_urbp6"]
 radius = 18.0278
 
-[node name="Car" type="Node2D"]
-script = ExtResource("1_5wrbs")
+[node name="Cybertruck" type="Node2D"]
+script = ExtResource("1_ydsad")
 wheel_damping = 0.7
 
 [node name="Body" type="RigidBody2D" parent="."]
@@ -19,23 +19,24 @@ mass = 5.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 10)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
-polygon = PackedVector2Array(-92, 21, -69, 5, -42, 6, -27, -6, -28, 29, 36, 29, 50, 23, 50, -14, 62, -12, 80, 4, 88, 25, 85, 45, 78, 27, 63, 22, 45, 31, 42, 47, -34, 46, -38, 33, -47, 23, -63, 23, -75, 32, -76, 50, -91, 47)
-
 [node name="Sprite2D" type="Sprite2D" parent="Body"]
-scale = Vector2(3, 3)
-texture = ExtResource("1_hvg2b")
+position = Vector2(9, 13)
+scale = Vector2(0.3, 0.5)
+texture = ExtResource("2_jy4pu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+polygon = PackedVector2Array(-87, 6, -38, -21, -30, 31, 47, 30, 47, -25, 105, -12, 102, 39, 86, 45, 83, 23, 55, 21, 43, 46, -37, 45, -48, 22, -66, 23, -80, 33, -79, 45, -85, 43)
 
 [node name="Area2D" type="Area2D" parent="Body"]
-position = Vector2(11, 16)
+position = Vector2(10, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D"]
-position = Vector2(4.625, -1.375)
+position = Vector2(-3, 6)
 shape = SubResource("RectangleShape2D_k2mv1")
 
 [node name="Wheel" type="RigidBody2D" parent="."]
-position = Vector2(-56, 43)
-physics_material_override = ExtResource("2_eh5s3")
+position = Vector2(-61, 45)
+physics_material_override = ExtResource("3_m6qug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel"]
 shape = SubResource("CircleShape2D_urbp6")
@@ -45,8 +46,8 @@ node_a = NodePath("../../Body")
 node_b = NodePath("..")
 
 [node name="Wheel2" type="RigidBody2D" parent="."]
-position = Vector2(63, 43)
-physics_material_override = ExtResource("2_eh5s3")
+position = Vector2(67, 46)
+physics_material_override = ExtResource("3_m6qug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel2"]
 shape = SubResource("CircleShape2D_urbp6")
