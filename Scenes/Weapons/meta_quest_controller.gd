@@ -14,11 +14,12 @@ func _ready():
 
 func _physics_process(delta):
 	line.global_position = Vector2.ZERO
+	print(spring.node_a)
 	if is_instance_valid(spring.node_a) and is_instance_valid(spring.node_b):
-		print(spring.node_a)
 		line.set_point_position(0, get_node(spring.node_a).global_position) 
 		line.set_point_position(1, get_node(spring.node_b).global_position) 
-
+	
+	get_node(spring.node_a)
 
 func activate():
 	visible = true

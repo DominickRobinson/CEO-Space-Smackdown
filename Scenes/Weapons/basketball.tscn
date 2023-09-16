@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://u0s8cljfvj2b"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Bullet.gd" id="1_cvqvo"]
+[ext_resource type="Texture2D" uid="uid://bin43clr6g0er" path="res://Assets/Art/Objects/basketball.png" id="2_ndnw0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mh1r"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymipl"]
+radius = 18.0278
+
+[node name="Basketball" type="RigidBody2D"]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_2mh1r")
+script = ExtResource("1_cvqvo")
+free_on_impact = false
+damage = 5.0
+impulse_length = 400.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ndnw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ymipl")
