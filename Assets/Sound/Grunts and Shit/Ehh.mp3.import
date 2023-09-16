@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drv2nec3odury"
+path="res://.godot/imported/Ehh.mp3-5b32b1463960ff6afe0db14395e0f429.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Grunts and Shit/Ehh.mp3"
+dest_files=["res://.godot/imported/Ehh.mp3-5b32b1463960ff6afe0db14395e0f429.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

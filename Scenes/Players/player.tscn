@@ -11,7 +11,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
 radius = 32.0
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" groups=["Players"]]
 script = ExtResource("1_vxcpo")
 texture_idle = ExtResource("2_gg32x")
 texture_hit = ExtResource("2_1hshh")

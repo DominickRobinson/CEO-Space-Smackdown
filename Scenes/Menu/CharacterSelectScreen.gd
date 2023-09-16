@@ -125,8 +125,7 @@ func _input(event: InputEvent) -> void:
 	
 	# PRESS ENTER HERE
 	if event.is_action_pressed("start") and all_ready:
-		print("StART LEVEL NOW")
-	
+		LoadManager.load_level_select()
 
 # Create a new pointer node, for when a player joins.
 func create_select_pointer(color: Color = Color.WHITE, ind: int = -1) -> void:
@@ -134,9 +133,9 @@ func create_select_pointer(color: Color = Color.WHITE, ind: int = -1) -> void:
 	player_pointers.append(pointer_instance)
 	pointer_instance.modulate = color
 	add_child(pointer_instance)
-	pointer_instance.target = icon_grid.get_child(ind) as CharacterSelectIcon
+	pointer_instance.target = icon_grid.get_child(0) as CharacterSelectIcon
 	player_pointers_selected.append(false)
-	player_select_displays[ind].set_character(icon_grid.get_child(ind))
+	player_select_displays[ind].set_character(icon_grid.get_child(0))
 
 func update_selection_status() -> void:
 	LoadManager.set_characters(player_pointers[0].target.character_scene, player_pointers[1].target.character_scene)
