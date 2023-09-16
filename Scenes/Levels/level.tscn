@@ -56,15 +56,9 @@ _data = {
 [node name="Level" type="Node2D"]
 script = ExtResource("1_temhb")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1775.5, 1059.5)
+scale = Vector2(12.8967, 8.94191)
 texture = ExtResource("1_jw48k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -76,7 +70,8 @@ zoom = Vector2(0.35, 0.35)
 scale = Vector2(3, 3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-3, 360, 81, 354, 200, 342, 359, 341, 582, 358, 778, 373, 1001, 397, 1155, 411, 1151, 646, -3, 649)
+position = Vector2(-47, 26)
+polygon = PackedVector2Array(-3, 360, 81, 354, 198.333, 349.333, 361.333, 348, 582, 358, 778, 373, 1001, 397, 1298.67, 420.333, 1312.67, 675, -3, 649)
 
 [node name="BlastZone" type="Area2D" parent="."]
 script = ExtResource("4_sxmdn")
@@ -86,7 +81,7 @@ position = Vector2(-92, 597)
 shape = SubResource("RectangleShape2D_2nw5l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(3537, 571)
+position = Vector2(3714, 613)
 shape = SubResource("RectangleShape2D_6pye1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]

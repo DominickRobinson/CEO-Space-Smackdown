@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://csa0ip7vnq2ny"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Gun.gd" id="1_6hx7m"]
+[ext_resource type="PackedScene" uid="uid://xgqlupmmuhvl" path="res://Scenes/Weapons/Bullets/heart.tscn" id="2_xptkv"]
+
+[node name="HeartThrower" type="Node2D"]
+script = ExtResource("1_6hx7m")
+bullet_resource = ExtResource("2_xptkv")
+shoot_speed = 700.0
+
+[node name="Timer" type="Timer" parent="."]

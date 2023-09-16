@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6qwdktclya8w"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/Bullet.gd" id="1_h0u50"]
+[ext_resource type="Script" path="res://Scenes/Weapons/Bullets/Bullet.gd" id="1_4b8r7"]
 [ext_resource type="FontFile" uid="uid://dluh220vresct" path="res://Resources/Fonts/potato_sans/Potato_sans-Black.otf" id="2_euoee"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mh1r"]
@@ -12,7 +12,7 @@ size = Vector2(50, 14)
 [node name="Haha" type="RigidBody2D"]
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_2mh1r")
-script = ExtResource("1_h0u50")
+script = ExtResource("1_4b8r7")
 free_on_impact = false
 damage = 5.0
 impulse_length = 400.0

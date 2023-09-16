@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy43qiwdnt8ga"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/hammer.gd" id="1_f2t0w"]
+[ext_resource type="Texture2D" uid="uid://dbf5j3lmiosco" path="res://Assets/Art/Weapons/girder.png" id="2_c6agw"]
+
+[node name="Girder" type="CollisionPolygon2D"]
+position = Vector2(44, 1)
+polygon = PackedVector2Array(-35, -18, 150, -17, 142, 18, -39, 14)
+script = ExtResource("1_f2t0w")
+damage = 20.0
+impulse_length = 700.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(65, -1.90735e-06)
+scale = Vector2(0.3, 0.6)
+texture = ExtResource("2_c6agw")

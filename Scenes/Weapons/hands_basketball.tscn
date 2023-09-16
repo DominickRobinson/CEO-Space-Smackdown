@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b51bi3vgp08e"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/Gun.gd" id="1_btstr"]
-[ext_resource type="PackedScene" uid="uid://u0s8cljfvj2b" path="res://Scenes/Weapons/basketball.tscn" id="2_aon4n"]
+[ext_resource type="PackedScene" uid="uid://u0s8cljfvj2b" path="res://Scenes/Weapons/Bullets/basketball.tscn" id="2_aon4n"]
 [ext_resource type="Texture2D" uid="uid://dwrk6y6qql05n" path="res://Assets/Art/Weapons/hands.png" id="3_i2gwh"]
 
 [node name="HandsBasketball" type="Node2D"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://xgqlupmmuhvl"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Bullets/Bullet.gd" id="1_3k4ru"]
+[ext_resource type="Texture2D" uid="uid://dcl2b4li1msfn" path="res://Assets/Art/Weapons/heart.png" id="2_j4gug"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mh1r"]
+resource_local_to_scene = true
+
+[node name="Heart" type="RigidBody2D"]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_2mh1r")
+script = ExtResource("1_3k4ru")
+free_on_impact = false
+damage = 5.0
+impulse_length = 400.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_j4gug")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-18, -14, -11, -18, -3, -16, 0, -10, 4, -17, 11, -18, 18, -14, 21, -6, 18, 1, 11, 8, 4, 13, 0, 18, -4, 14, -19, -1, -21, -9)

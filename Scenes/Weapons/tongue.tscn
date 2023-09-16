@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://434g7i2ant4c"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/hammer.gd" id="1_owmkm"]
+[ext_resource type="Texture2D" uid="uid://dnftxa5u76i74" path="res://Assets/Art/Weapons/tongue.png" id="2_cpnsn"]
+
+[node name="Tongue" type="CollisionPolygon2D"]
+polygon = PackedVector2Array(12, -21, 39, -39, 68, -47, 88, -46, 109, -38, 117, -22, 114, -4, 105, 10, 92, 15, 77, 14, 37, 9, 18, 10, 1, 15)
+script = ExtResource("1_owmkm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(61, -9)
+rotation = -1.08882
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_cpnsn")

@@ -16,8 +16,9 @@ polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 1087, -258, 1178, -263, 1179, 150, -97, 135, -95, -508, 53, -493)
 
-[node name="Player" parent="." instance=ExtResource("1_111kg")]
+[node name="Player" parent="." node_paths=PackedStringArray("weapon1") instance=ExtResource("1_111kg")]
 position = Vector2(299, 125)
+weapon1 = NodePath("SoundWave")
 
 [node name="SoundWave" parent="Player" instance=ExtResource("3_6cjup")]
 position = Vector2(31, 9)

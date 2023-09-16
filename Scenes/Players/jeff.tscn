@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgmao0s6sb5ns"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_2e0in"]
+[ext_resource type="Texture2D" uid="uid://cnr6cm8t0vei0" path="res://Assets/Art/Characters/Bezos/BezosIdle.png" id="2_0olse"]
+[ext_resource type="Texture2D" uid="uid://bs4rqx6spe3mj" path="res://Assets/Art/Characters/Bezos/BezosHit.png" id="3_0gvd4"]
+[ext_resource type="Texture2D" uid="uid://1m8syy26o788" path="res://Assets/Art/Characters/Bezos/BezosAttack1.png" id="4_jkln3"]
+[ext_resource type="Texture2D" uid="uid://y58gl2b7ujph" path="res://Assets/Art/Characters/Bezos/BezosAttack2.png" id="5_5qb84"]
+[ext_resource type="Texture2D" uid="uid://dwypjdstkgbsp" path="res://Assets/Art/Characters/Bezos/BezosTaunt.png" id="6_qx64o"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_i3nhl"]
+[ext_resource type="PackedScene" uid="uid://dt7ro8qp6likf" path="res://Scenes/Weapons/sound_wave.tscn" id="9_0m5dk"]
+[ext_resource type="PackedScene" uid="uid://ctoopfovxgucp" path="res://Scenes/Weapons/hands_box.tscn" id="9_30cv2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
+radius = 32.0
+
+[node name="Jeff" type="RigidBody2D" node_paths=PackedStringArray("weapon1", "weapon2") groups=["Players"]]
+script = ExtResource("1_2e0in")
+texture_idle = ExtResource("2_0olse")
+texture_hit = ExtResource("3_0gvd4")
+texture_attack1 = ExtResource("4_jkln3")
+texture_attack2 = ExtResource("5_5qb84")
+texture_taunt = ExtResource("6_qx64o")
+weapon1 = NodePath("SoundWave")
+weapon2 = NodePath("HandsBox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_0olse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thyhi")
+
+[node name="RayCast2Ds" type="Node2D" parent="."]
+script = ExtResource("7_i3nhl")
+
+[node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(0, 36)
+
+[node name="LeftCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(-36, 0)
+
+[node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="SoundWave" parent="." instance=ExtResource("9_0m5dk")]
+
+[node name="HandsBox" parent="." instance=ExtResource("9_30cv2")]
+position = Vector2(64, -50)

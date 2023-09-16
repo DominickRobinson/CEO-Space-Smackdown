@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://otuu4mext5no"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Bullets/Bullet.gd" id="1_ubctr"]
+[ext_resource type="Texture2D" uid="uid://bnoqrsw76uh2j" path="res://Assets/Art/Weapons/box.png" id="2_nj8fx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mh1r"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_678ma"]
+size = Vector2(24, 13)
+
+[node name="Box" type="RigidBody2D"]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_2mh1r")
+script = ExtResource("1_ubctr")
+free_on_impact = false
+damage = 5.0
+impulse_length = 400.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_678ma")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_nj8fx")

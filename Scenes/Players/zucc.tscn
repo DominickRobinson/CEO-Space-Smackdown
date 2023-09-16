@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://dk4wyr6trryaf"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_qskn0"]
+[ext_resource type="Texture2D" uid="uid://tdjncmildttj" path="res://Assets/Art/Characters/Zucc/ZuccHit.png" id="3_1gwet"]
+[ext_resource type="Texture2D" uid="uid://cc7pgyoj78khh" path="res://Assets/Art/Characters/Zucc/ZuccAttack1.png" id="4_urone"]
+[ext_resource type="Texture2D" uid="uid://cnttfbi0bngxm" path="res://Assets/Art/Characters/Zucc/ZuccAttack2.png" id="5_aglkx"]
+[ext_resource type="Texture2D" uid="uid://cfxhe0jlmkrcm" path="res://Assets/Art/Characters/Zucc/ZuccTaunt.png" id="6_2ord4"]
+[ext_resource type="Texture2D" uid="uid://b07bj86lbf1bb" path="res://Assets/Art/Characters/Zucc/ZuccIdle.png" id="7_4vqde"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="8_rxr4i"]
+[ext_resource type="PackedScene" uid="uid://wfl6o0vr52ob" path="res://Scenes/Weapons/tail.tscn" id="9_f1rbc"]
+[ext_resource type="PackedScene" uid="uid://434g7i2ant4c" path="res://Scenes/Weapons/tongue.tscn" id="10_ypw4p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
+radius = 32.0
+
+[node name="Zucc" type="RigidBody2D" node_paths=PackedStringArray("weapon1", "weapon2") groups=["Players"]]
+script = ExtResource("1_qskn0")
+texture_idle = ExtResource("7_4vqde")
+texture_hit = ExtResource("3_1gwet")
+texture_attack1 = ExtResource("4_urone")
+texture_attack2 = ExtResource("5_aglkx")
+texture_taunt = ExtResource("6_2ord4")
+weapon1 = NodePath("Tail")
+weapon2 = NodePath("Tongue")
+ground_linear_velocity_boost = 30.0
+aerial_linear_velocity_boost = 20.0
+aerial_angular_velocity_boost = 1.0
+ground_jump_boost = 700
+aerial_jump_boost = 900
+wall_jump_boost = 800
+max_linear_velocity = 1250
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("7_4vqde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thyhi")
+
+[node name="RayCast2Ds" type="Node2D" parent="."]
+script = ExtResource("8_rxr4i")
+
+[node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(0, 36)
+
+[node name="LeftCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(-36, 0)
+
+[node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Tail" parent="." instance=ExtResource("9_f1rbc")]
+position = Vector2(-34, -1)
+
+[node name="Tongue" parent="." instance=ExtResource("10_ypw4p")]
+position = Vector2(31, 2)

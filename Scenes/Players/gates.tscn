@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://gxi421mqll0y"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_40clp"]
+[ext_resource type="Texture2D" uid="uid://csujijucgeucg" path="res://Assets/Art/Characters/Gates/GatesIdle.png" id="2_jkg4a"]
+[ext_resource type="Texture2D" uid="uid://dvvaltrnuo3n2" path="res://Assets/Art/Characters/Gates/GatesHit.png" id="3_lv5bg"]
+[ext_resource type="Texture2D" uid="uid://bfdb8vh2wwp50" path="res://Assets/Art/Characters/Gates/GatesAttack1.png" id="4_r484c"]
+[ext_resource type="Texture2D" uid="uid://cs0uugvnymh5e" path="res://Assets/Art/Characters/Gates/GatesAttack2.png" id="5_w5q42"]
+[ext_resource type="Texture2D" uid="uid://dag6oykfr0hmd" path="res://Assets/Art/Characters/Gates/GatesTaunt.png" id="6_3735d"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="8_bhpoj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
+radius = 32.0
+
+[node name="Gates" type="RigidBody2D" node_paths=PackedStringArray("weapon1", "weapon2") groups=["Players"]]
+script = ExtResource("1_40clp")
+texture_idle = ExtResource("2_jkg4a")
+texture_hit = ExtResource("3_lv5bg")
+texture_attack1 = ExtResource("4_r484c")
+texture_attack2 = ExtResource("5_w5q42")
+texture_taunt = ExtResource("6_3735d")
+weapon1 = NodePath("")
+weapon2 = NodePath("")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_jkg4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thyhi")
+
+[node name="RayCast2Ds" type="Node2D" parent="."]
+script = ExtResource("8_bhpoj")
+
+[node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(0, 36)
+
+[node name="LeftCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(-36, 0)
+
+[node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5

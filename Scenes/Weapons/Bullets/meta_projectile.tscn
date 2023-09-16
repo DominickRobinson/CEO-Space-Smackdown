@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://duq3u1racbei8"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/Bullet.gd" id="1_fln86"]
+[ext_resource type="Script" path="res://Scenes/Weapons/Bullets/Bullet.gd" id="1_8dqa5"]
 [ext_resource type="Texture2D" uid="uid://c0f404pururyy" path="res://Assets/Art/Weapons/meta_quest_controller.png" id="2_wo8qa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mh1r"]
@@ -9,7 +9,7 @@ bounce = 0.8
 [node name="MetaQuestControllerProjectile" type="RigidBody2D"]
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_2mh1r")
-script = ExtResource("1_fln86")
+script = ExtResource("1_8dqa5")
 free_on_impact = false
 damage = 5.0
 impulse_length = 400.0

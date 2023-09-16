@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1uma1wnkux3f"]
+[gd_scene load_steps=10 format=3 uid="uid://c1uma1wnkux3f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/LevelSelectScreen.gd" id="1_4slje"]
 [ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_dtntp"]
 [ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_125yi"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="3_yc4p8"]
+[ext_resource type="Texture2D" uid="uid://d1hu45cxiqxle" path="res://Assets/Art/Backgrounds/bliss.png" id="4_h0s7f"]
 [ext_resource type="PackedScene" uid="uid://doi7mr86bkho7" path="res://Scenes/Menu/player_select_display.tscn" id="4_khslj"]
 [ext_resource type="PackedScene" uid="uid://vuur8xxn2cog" path="res://Scenes/Levels/level.tscn" id="5_jte54"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="7_xqdh2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0xtxj"]
 
@@ -30,9 +32,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -482.0
-offset_top = -219.0
+offset_top = -147.0
 offset_right = 42.0
-offset_bottom = 173.0
+offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
@@ -42,7 +44,8 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_0xtxj")
+texture = ExtResource("4_h0s7f")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 character_scene = ExtResource("5_jte54")
 character_name = "WINDOWS XD"
@@ -53,6 +56,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_0xtxj")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 
 [node name="TextureRect3" type="TextureRect" parent="IconGrid"]
@@ -61,6 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_0xtxj")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 
 [node name="TextureRect4" type="TextureRect" parent="IconGrid"]
@@ -69,6 +74,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_0xtxj")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 
 [node name="TextureRect5" type="TextureRect" parent="IconGrid"]
@@ -77,6 +83,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_0xtxj")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 
 [node name="TextureRect6" type="TextureRect" parent="IconGrid"]
@@ -85,6 +92,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_0xtxj")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 
 [node name="TextureRect7" type="TextureRect" parent="IconGrid"]
@@ -93,6 +101,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_0xtxj")
+expand_mode = 2
 script = ExtResource("3_yc4p8")
 
 [node name="Display" parent="." instance=ExtResource("4_khslj")]
@@ -130,3 +139,17 @@ grow_vertical = 2
 text = "BEGIN!
 (ENTER)"
 horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -359.5
+offset_top = 24.0
+offset_right = 359.5
+offset_bottom = 84.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_xqdh2")
+theme_override_font_sizes/font_size = 60
+text = "Choose your STAGE!"

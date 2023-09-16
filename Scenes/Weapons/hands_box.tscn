@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctoopfovxgucp"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Gun.gd" id="1_8bhx4"]
+[ext_resource type="PackedScene" uid="uid://otuu4mext5no" path="res://Scenes/Weapons/Bullets/box.tscn" id="2_q07u2"]
+[ext_resource type="Texture2D" uid="uid://dwrk6y6qql05n" path="res://Assets/Art/Weapons/hands.png" id="3_8lsug"]
+
+[node name="HandsBox" type="Node2D"]
+script = ExtResource("1_8bhx4")
+bullet_resource = ExtResource("2_q07u2")
+shoot_speed = 700.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-35, 14)
+rotation = -2.06059
+scale = Vector2(-0.1, 0.1)
+texture = ExtResource("3_8lsug")
