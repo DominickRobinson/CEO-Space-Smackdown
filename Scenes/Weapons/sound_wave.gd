@@ -7,6 +7,14 @@ func _ready():
 
 
 
+func activate():
+	self.monitoring = true
+	visible = true
+
+func deactivate():
+	self.monitoring = false
+	visible = false
+
 
 func _on_body_entered(body):
 	if not (body is RigidBody2D):

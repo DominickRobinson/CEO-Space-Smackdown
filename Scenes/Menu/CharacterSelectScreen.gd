@@ -125,7 +125,7 @@ func _input(event: InputEvent) -> void:
 	
 	# PRESS ENTER HERE
 	if event.is_action_pressed("start") and all_ready:
-		print("StART LEVEL NOW")
+		SceneManager.load_scene(load("res://Scenes/test.tscn"))
 	
 
 # Create a new pointer node, for when a player joins.
