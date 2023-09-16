@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="1_dtntp"]
 [ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_125yi"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="3_yc4p8"]
-[ext_resource type="PackedScene" uid="uid://c3n4yuiwpc73k" path="res://Scenes/Menu/player_select_display.tscn" id="4_khslj"]
+[ext_resource type="PackedScene" uid="uid://doi7mr86bkho7" path="res://Scenes/Menu/player_select_display.tscn" id="4_khslj"]
 [ext_resource type="PackedScene" uid="uid://emu8vshkmy0t" path="res://Scenes/test.tscn" id="5_vq2gb"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0xtxj"]

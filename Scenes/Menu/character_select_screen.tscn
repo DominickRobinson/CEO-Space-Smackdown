@@ -3,18 +3,13 @@
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
 [ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_52sur"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://c3n4yuiwpc73k" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
-=======
 [ext_resource type="Texture2D" uid="uid://dgyc2ikmm7dqe" path="res://Assets/Art/Characters/Musk/MuskIdle.png" id="4_j6oo1"]
 [ext_resource type="PackedScene" uid="uid://doi7mr86bkho7" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
-[ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
 [ext_resource type="Texture2D" uid="uid://cnr6cm8t0vei0" path="res://Assets/Art/Characters/Bezos/BezosIdle.png" id="6_t1gf1"]
 [ext_resource type="Texture2D" uid="uid://cabf72oo7essf" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeIdle.png" id="7_8p0bo"]
 [ext_resource type="Texture2D" uid="uid://covv76247a4ny" path="res://Assets/Art/Characters/Cuban/CubanIdle.png" id="8_f16rf"]
 [ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="10_5viwe"]
->>>>>>> Stashed changes
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2vdp"]
 
