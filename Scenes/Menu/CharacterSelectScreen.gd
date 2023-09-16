@@ -169,8 +169,14 @@ func get_new_target_index(current: int, direction: Direction) -> int:
 			else:
 				col = 0 if col == grid_width - 1 else col + 1
 		Direction.Up:
-			row = row - 1 if row != 0 else grid_height - 1
+			if row == 0:
+				row = grid_height - 1 if grid_last_row_count-1 >= col else (grid_height - 2 if grid_height > 1 else 0)
+			else:
+				row -= 1
 		Direction.Down:
-			row = row + 1 if row + 1 < grid_height else 0
+			if row == grid_height - 2:
+				row = grid_height - 1 if grid_last_row_count-1 >= col else 0
+			else:
+				row = row + 1 if row < grid_height - 1 else 0
 	
 	return row * grid_width + col
