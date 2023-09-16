@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cldgcwnjkncgt"]
 
-[ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
 [ext_resource type="FontFile" uid="uid://dn4ccg5sikevk" path="res://Resources/Fonts/future_z/Future Z.ttf" id="1_sxcss"]
 [ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="2_lrlke"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="2_tnpqp"]

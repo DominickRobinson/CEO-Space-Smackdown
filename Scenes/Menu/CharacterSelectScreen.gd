@@ -125,8 +125,7 @@ func _input(event: InputEvent) -> void:
 	
 	# PRESS ENTER HERE
 	if event.is_action_pressed("start") and all_ready:
-		print("StART LEVEL NOW")
-	
+		LoadManager.load_level_select()
 
 # Create a new pointer node, for when a player joins.
 func create_select_pointer(color: Color = Color.WHITE, ind: int = -1) -> void:

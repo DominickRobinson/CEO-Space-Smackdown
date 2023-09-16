@@ -44,7 +44,6 @@ func _input(event: InputEvent) -> void:
 		player_pointer.target = icon_grid.get_child(new_target)
 		display.set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("move_right") or event.is_action_pressed("move_right_alt"):
-		var player_index := 0
 		if selected:
 			return
 		var new_target := get_new_target_index(player_pointer.index, Direction.Right)
@@ -52,7 +51,6 @@ func _input(event: InputEvent) -> void:
 		player_pointer.target = icon_grid.get_child(new_target)
 		display.set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("jump") or event.is_action_pressed("jump_alt"):
-		var player_index := 0
 		if selected:
 			return
 		var new_target := get_new_target_index(player_pointer.index, Direction.Up)
@@ -60,7 +58,6 @@ func _input(event: InputEvent) -> void:
 		player_pointer.target = icon_grid.get_child(new_target)
 		display.set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("taunt") or event.is_action_pressed("taunt_alt"):
-		var player_index := 0
 		if selected:
 			return
 		var new_target := get_new_target_index(player_pointer.index, Direction.Down)
@@ -68,7 +65,6 @@ func _input(event: InputEvent) -> void:
 		player_pointer.target = icon_grid.get_child(new_target)
 		display.set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("attack1") or event.is_action_pressed("attack2") or event.is_action_pressed("attack1_alt") or event.is_action_pressed("attack2_alt"):
-		var player_index := 0
 		player_pointer.toggle_selected()
 		selected = not selected
 		display.select_character(selected)
@@ -76,8 +72,7 @@ func _input(event: InputEvent) -> void:
 	
 	# PRESS ENTER HERE
 	if event.is_action_pressed("start") and selected:
-		print("StART LEVEL NOW")
-	
+		LoadManager.load_level(player_pointer.target.character_scene)
 
 # Create a new pointer node, for when a player joins.
 func create_select_pointer(color: Color = Color.WHITE) -> void:
