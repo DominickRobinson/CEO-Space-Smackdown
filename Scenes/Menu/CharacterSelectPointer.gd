@@ -1,11 +1,19 @@
 class_name CharacterSelectPointer
-extends Node2D
+extends Control
 
 var target : CharacterSelectIcon:
 	set(val):
-		position = val.position
+		$TextureRect.global_position = val.global_position
 		target = val
 	get:
 		return target 
 
 var index := 0
+var selected := false
+
+func toggle_selected() -> void:
+	selected = not selected
+	if selected:
+		$TextureRect.scale = Vector2(0.8,0.8)
+	else:
+		$TextureRect.scale = Vector2(1,1)
