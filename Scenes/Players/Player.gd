@@ -41,9 +41,14 @@ var is_moving_right = false
 var is_moving_left = false
 var is_jumping = false
 var jumps = 2
+var in_hitstun = false
 
 var damage = 0
 
+
+
+func _ready():
+	set_sprite(texture_idle)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -157,13 +162,17 @@ func take_damage(amount:float, impulse:Vector2) -> void:
 	apply_central_impulse(impulse * damage / 100)
 	
 	set_sprite(texture_hit)
-	hitstun_timer.start(0.5)
+	hitstun_timer.start(1.0 * amount / 10)
+	in_hitstun = true
+	modulate = Color(0.5, 0.5, 0.5)
 	await hitstun_timer.timeout
+	in_hitstun = false
+	modulate = Color.WHITE
 	set_sprite(texture_idle)
 
 
 func is_hitstun_active() -> bool:
-	return not hitstun_timer.is_stopped()
+	return in_hitstun
 
 
 func set_sprite(texture:Texture2D):
