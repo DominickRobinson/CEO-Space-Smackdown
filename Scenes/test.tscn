@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://emu8vshkmy0t"]
+
+[ext_resource type="PackedScene" uid="uid://cu7tyxjgkvb2y" path="res://Scenes/player.tscn" id="1_111kg"]
+[ext_resource type="PackedScene" uid="uid://cvkukm1i5g3i" path="res://Scenes/car.tscn" id="2_iw2vg"]
+
+[node name="test" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-17, 583)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 1087, -258, 1178, -263, 1179, 150, -97, 135, -95, -508, 53, -493)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 1087, -258, 1178, -263, 1179, 150, -97, 135, -95, -508, 53, -493)
+
+[node name="Player" parent="." instance=ExtResource("1_111kg")]
+
+[node name="Car" parent="." instance=ExtResource("2_iw2vg")]
+position = Vector2(903, 390)
