@@ -68,6 +68,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("attack1"):
 		if is_instance_valid(weapon1):
 			weapon1.toggle()
+			if is_instance_valid(weapon2): weapon2.deactivate()
 			set_sprite(texture_attack1)
 			await get_tree().create_timer(1.0).timeout
 			set_sprite(texture_idle)
@@ -75,6 +76,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("attack2"):
 		if is_instance_valid(weapon2):
 			weapon2.toggle()
+			if is_instance_valid(weapon1): weapon1.deactivate()
 			set_sprite(texture_attack2)
 			await get_tree().create_timer(1.0).timeout
 			set_sprite(texture_idle)
