@@ -1,7 +1,7 @@
 class_name Level
 extends Node2D
 
-
+@export var gravity_multiplier : float = 1.0
 
 @onready var p1_spawn = $PlayerOneSpawn
 @onready var p2_spawn = $PlayerTwoSpawn
@@ -52,3 +52,8 @@ func win2():
 	end_label.text = "Player 2 wins!"
 	await get_tree().create_timer(3.0).timeout
 	SceneManager.load_scene(load("res://Scenes/Menu/title.tscn"))
+
+
+
+
+

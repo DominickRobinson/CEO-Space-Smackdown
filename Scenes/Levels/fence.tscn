@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvu5xsjayaq8u"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_xyb7v"]
+[ext_resource type="Texture2D" uid="uid://lipwvg1dx85y" path="res://Assets/Art/Backgrounds/the_fence.jpg" id="2_ae114"]
+[ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_5b564"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_isilr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
+size = Vector2(146, 2826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pye1"]
+size = Vector2(153, 2860)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl1gh"]
+size = Vector2(3906.5, 377)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky0ef"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_v7t3t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_143di"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.411765)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtn10"]
+_data = {
+"RESET": SubResource("Animation_v7t3t"),
+"show": SubResource("Animation_143di")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_xyb7v")
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1754, 1127)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_ae114")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(462, 623)
+anchor_mode = 0
+zoom = Vector2(0.45, 0.65)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-47, 26)
+polygon = PackedVector2Array(164, 287.667, 170, 280.667, 185.333, 275, 198.667, 276.333, 210.667, 281.667, 211.667, 295, 227.667, 297.667, 316, 295.667, 369, 293.667, 370.333, 283.667, 380.667, 278.667, 393.667, 276.667, 405.333, 280, 411.667, 284.333, 412.333, 294, 414.667, 297.667, 498.667, 300.333, 532.667, 298, 554.333, 294.667, 556.333, 283, 565.333, 278, 575, 276.333, 590, 280.333, 595.667, 283, 598.333, 294, 641, 296.333, 724.333, 296.667, 724.667, 286, 737, 279, 748, 279.333, 761.667, 283.333, 765.667, 297, 891.333, 295.667, 895, 280.333, 913.333, 276.667, 924.333, 278.333, 933.333, 284.333, 932.333, 294.333, 1043, 294, 1046, 284, 1051.33, 276.667, 1063, 276.333, 1080.67, 281.333, 1084.67, 355, 165.667, 358)
+
+[node name="BlastZone" type="Area2D" parent="."]
+script = ExtResource("3_5b564")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(277, 659)
+shape = SubResource("RectangleShape2D_2nw5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(3201, 615)
+shape = SubResource("RectangleShape2D_6pye1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1868, 1866)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1827, 307)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="PlayerOneSpawn" type="Node2D" parent="."]
+position = Vector2(1037, 864)
+
+[node name="PlayerTwoSpawn" type="Node2D" parent="."]
+position = Vector2(2604, 867)
+
+[node name="PlayerWin" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerWin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ky0ef")
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerWin/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerWin/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_isilr")
+theme_override_font_sizes/font_size = 100
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerWin"]
+libraries = {
+"": SubResource("AnimationLibrary_qtn10")
+}
+
+[connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

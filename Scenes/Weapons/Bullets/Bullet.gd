@@ -4,8 +4,8 @@ extends RigidBody2D
 
 @export var free_on_impact : bool = true
 
-@export var damage : float = 0.0
-@export var impulse_length : float = 0.0
+@export var damage : float = 5.0
+@export var impulse_length : float = 700.0
 
 
 func _ready():

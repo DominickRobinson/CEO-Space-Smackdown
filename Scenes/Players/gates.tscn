@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gxi421mqll0y"]
+[gd_scene load_steps=11 format=3 uid="uid://gxi421mqll0y"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_40clp"]
 [ext_resource type="Texture2D" uid="uid://csujijucgeucg" path="res://Assets/Art/Characters/Gates/GatesIdle.png" id="2_jkg4a"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cs0uugvnymh5e" path="res://Assets/Art/Characters/Gates/GatesAttack2.png" id="5_w5q42"]
 [ext_resource type="Texture2D" uid="uid://dag6oykfr0hmd" path="res://Assets/Art/Characters/Gates/GatesTaunt.png" id="6_3735d"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="8_bhpoj"]
+[ext_resource type="PackedScene" uid="uid://teima8o28dfw" path="res://Scenes/Weapons/mouse.tscn" id="8_m8gfy"]
+[ext_resource type="PackedScene" uid="uid://drtsbekk6wfgv" path="res://Scenes/Weapons/halo_gun.tscn" id="9_jmphc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
 radius = 32.0
@@ -18,8 +20,8 @@ texture_hit = ExtResource("3_lv5bg")
 texture_attack1 = ExtResource("4_r484c")
 texture_attack2 = ExtResource("5_w5q42")
 texture_taunt = ExtResource("6_3735d")
-weapon1 = NodePath("")
-weapon2 = NodePath("")
+weapon1 = NodePath("Flamethrower")
+weapon2 = NodePath("Mouse")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.13, 0.13)
@@ -42,3 +44,9 @@ target_position = Vector2(36, 0)
 
 [node name="HitStunTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="Flamethrower" parent="." instance=ExtResource("9_jmphc")]
+position = Vector2(78, 9)
+
+[node name="Mouse" parent="." instance=ExtResource("8_m8gfy")]
+position = Vector2(71, 1)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://drtsbekk6wfgv"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Gun.gd" id="1_pgpha"]
+[ext_resource type="PackedScene" uid="uid://dxgdd4f3frgpc" path="res://Scenes/Weapons/Bullets/plasma.tscn" id="2_06apn"]
+[ext_resource type="Texture2D" uid="uid://cs06v18qw5onu" path="res://Assets/Art/Weapons/halo-gun.png" id="3_tuups"]
+
+[node name="Flamethrower" type="Node2D"]
+script = ExtResource("1_pgpha")
+bullet_resource = ExtResource("2_06apn")
+shoot_speed = 1200.0
+damage = 5.0
+impulse_length = 5.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-65, 7)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_tuups")

@@ -220,7 +220,6 @@ func check_commands() -> void:
 		is_jumping = Input.is_action_pressed("jump_alt")
 
 func take_damage(amount:float, impulse:Vector2) -> void:
-	hit.emit()
 	
 	damage += amount
 	apply_central_impulse(impulse * damage / 100)
@@ -229,10 +228,14 @@ func take_damage(amount:float, impulse:Vector2) -> void:
 	hitstun_timer.start(1.0 * amount / 10)
 	in_hitstun = true
 	modulate = Color(0.5, 0.5, 0.5)
+	hit.emit()
+	
 	await hitstun_timer.timeout
 	in_hitstun = false
 	modulate = Color.WHITE
 	set_sprite(texture_idle)
+	
+
 
 
 func is_hitstun_active() -> bool:
