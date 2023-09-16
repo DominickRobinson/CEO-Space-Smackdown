@@ -5,5 +5,4 @@ extends Button
 
 
 func _on_pressed():
-#	SceneManager.load_scene(scene)
-	pass
+	SceneManager.load_scene(scene)
