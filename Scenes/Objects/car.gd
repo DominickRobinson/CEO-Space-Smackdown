@@ -20,6 +20,7 @@ func _ready():
 	wheel2.angular_damp = wheel_damping
 	
 	audio_player = AudioStreamPlayer.new()
+	add_child(audio_player)
 	audio_player.stream = load("res://Assets/Sound/Items/CarVroom.mp3")
 	
 	var hurtbox = get_node("HurtBox")

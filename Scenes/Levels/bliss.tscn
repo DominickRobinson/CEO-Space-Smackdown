@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlqk140sx0442"]
+[gd_scene load_steps=15 format=3 uid="uid://dlqk140sx0442"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_424jw"]
 [ext_resource type="AudioStream" uid="uid://dtiidfow0h234" path="res://Assets/Music/Mars Confusion.mp3" id="2_ufnoi"]
 [ext_resource type="Texture2D" uid="uid://d1hu45cxiqxle" path="res://Assets/Art/Backgrounds/bliss.png" id="2_xqnnn"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_8ked8"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_wqei5"]
+[ext_resource type="PackedScene" uid="uid://csuqvbnfdxkhx" path="res://Scenes/Objects/chair.tscn" id="6_3j6g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
 size = Vector2(146, 2826)
@@ -53,6 +54,9 @@ _data = {
 "RESET": SubResource("Animation_v7t3t"),
 "show": SubResource("Animation_143di")
 }
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_csrof"]
+friction = 0.0
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_424jw")
@@ -123,5 +127,23 @@ theme_override_font_sizes/font_size = 100
 libraries = {
 "": SubResource("AnimationLibrary_qtn10")
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Chair" parent="Node2D" instance=ExtResource("6_3j6g3")]
+position = Vector2(1272, 879)
+physics_material_override = SubResource("PhysicsMaterial_csrof")
+
+[node name="Chair2" parent="Node2D" instance=ExtResource("6_3j6g3")]
+position = Vector2(1589, 921)
+physics_material_override = SubResource("PhysicsMaterial_csrof")
+
+[node name="Chair3" parent="Node2D" instance=ExtResource("6_3j6g3")]
+position = Vector2(2061, 903)
+physics_material_override = SubResource("PhysicsMaterial_csrof")
+
+[node name="Chair4" parent="Node2D" instance=ExtResource("6_3j6g3")]
+position = Vector2(2277, 910)
+physics_material_override = SubResource("PhysicsMaterial_csrof")
 
 [connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

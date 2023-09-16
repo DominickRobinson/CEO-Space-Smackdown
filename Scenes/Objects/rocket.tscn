@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cemm1ga345552"]
+
+[ext_resource type="Texture2D" uid="uid://b17prk0tbn6o1" path="res://Assets/Art/Objects/rocket.png" id="1_horwi"]
+[ext_resource type="Script" path="res://Scenes/Objects/rocket.gd" id="1_rna6t"]
+
+[node name="Rocket" type="RigidBody2D"]
+mass = 20.0
+script = ExtResource("1_rna6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 36)
+rotation = 0.558505
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_horwi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-67, 17, -54, -31, -70, -65, -19, -50, 37, -17, 130, -2, 200, 28, 130, 54, 35, 68, -28, 97, -73, 103, -58, 78)

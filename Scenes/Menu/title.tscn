@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cldgcwnjkncgt"]
+[gd_scene load_steps=10 format=3 uid="uid://cldgcwnjkncgt"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/title.gd" id="1_bmk76"]
 [ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ch5ma5k45b8sw" path="res://Assets/Music/CEO Smackdown.mp3" id="2_lutoy"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="2_tnpqp"]
 [ext_resource type="Script" path="res://Scenes/Menu/Begin.gd" id="4_xsshg"]
+[ext_resource type="FontFile" uid="uid://crkjtl7mr8ix1" path="res://Resources/Fonts/potato_sans/Potato_sans-Bold.otf" id="8_s76sq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et121"]
 bg_color = Color(0, 0, 0, 0.839216)
@@ -79,6 +80,18 @@ text = "Credits"
 flat = true
 
 [node name="HSeparator" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Controls" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 40
+text = "Controls"
+flat = true
+
+[node name="HSeparator2" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
@@ -186,6 +199,219 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="WorksCitedContainer/CenterContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
+text = "https://i.guim.co.uk/img/media/ff51317a233516aede64e630c73fdb26106c8b0f/0_32_3500_2099/master/3500.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=d17b6b75d031e48bd84ec4b886b5832c
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theguardian.com%2Fcommentisfree%2F2018%2Fjul%2F17%2Felon-musk-boneheadthailand-cave-rescue&psig=AOvVaw1MwyiZzNSp11sMfTJHKgX3&ust=1694917267518000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKjhpJiJroEDFQAAAAAdAAAAABAD
+
+I know Elon Musk does good, but he's still a bonehead | Hannah Jane Parkinson | The Guardian
+
+
+
+https://media.wired.com/photos/62a393d78eaf9419b31098a5/4:3/w_1960,h_1470,c_limit/musk_sec_GettyImages-1395062612.jpg
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Felon-musk-twitter-firehose%2F&psig=AOvVaw1emZfSuMj4z7nEsc3qvN6q&ust=1694919057936000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCID1itiProEDFQAAAAAdAAAAABAj
+Elon Musk Getting Twitter Fire-Hose Data Raises Privacy Concerns | WIRED
+
+
+https://helios-i.mashable.com/imagery/articles/05SzGlYqpD4cUlIaQ8DHdVF/hero-image.fill.size_1200x900.v1666999270.jpg
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fmashable.com%2Farticle%2Fmusk-twitter-takeover-analysis&psig=AOvVaw3TfJaVcL2pCRcQ0dWiB7zC&ust=1694920149825000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJCf-P-TroEDFQAAAAAdAAAAABAD
+
+Elon Musk bought Twitter. Then the hangover set in. | Mashable
+
+
+
+
+
+
+
+
+
+
+
+
+https://nypost.com/wp-content/uploads/sites/2/2022/11/elon-musk-halloween.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fnypost.com%2F2022%2F11%2F10%2Felon-musks-8-verification-fee-makes-twitter-worthless%2F&psig=AOvVaw1xVdxDSfHUzNu-gtezLXzE&ust=1694920959937000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKjU4JOXroEDFQAAAAAdAAAAABAY
+Elon Musk’s $8 verification fee makes Twitter worthless (nypost.com)
+
+
+https://static.dezeen.com/uploads/2021/06/elon-musk-architect_dezeen_1704_col_1.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dezeen.com%2F2021%2F06%2F08%2Felon-musk-greatest-architect-jan-boelen%2F&psig=AOvVaw0KX2TeoN-VNvnzTgshlm3S&ust=1694921561962000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCLj3woCZroEDFQAAAAAdAAAAABAH
+Elon Musk is \"the biggest architect of our time\" says Jan Boelen (dezeen.com)
+
+
+
+https://i.ytimg.com/vi/AmyiTyQ9Fx4/maxresdefault.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Ffirstcuriosity.com%2Fcelebrity%2Ffacebook-ceo-mark-zuckerberg-issues-a-very-serious-warning-to-meta-staff%2F&psig=AOvVaw14-6H-oy_UfzzDZIwwSmlg&ust=1694921925826000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCNiLh66aroEDFQAAAAAdAAAAABAk
+Facebook CEO Mark Zuckerberg Issues A Very Serious Warning To Meta Staff - FirstCuriosity
+
+
+https://i.guim.co.uk/img/media/6a81dc07b829c11988c64776652bf96e5f301b50/0_137_4104_2462/master/4104.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=1ba10b64a610dc02e74c633274d87891
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theguardian.com%2Ftechnology%2F2020%2Fjul%2F02%2Fmark-zuckerberg-advertisers-boycott-facebook-back-soon-enough&psig=AOvVaw3fZlBbHQe3r2uGpxJ1aCzx&ust=1694922388969000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIDu8O6droEDFQAAAAAdAAAAABAD
+Mark Zuckerberg: advertisers' boycott of Facebook will end 'soon enough' | Facebook | The Guardian
+
+
+https://cdn.images.express.co.uk/img/dynamic/1/590x/Mark-Zuckerberg-Facebook-cult-North-Korea-sexism-685141.jpg?r=1686998680160
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.express.co.uk%2Fnews%2Fuk%2F685141%2FMark-Zuckerberg-Facebook-North-Korea-cult-sexism&psig=AOvVaw0tB1qXD2uAlIsanu9kjalp&ust=1694922996740000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMC92KyeroEDFQAAAAAdAAAAABAD
+Zuckerberg ‘runs Facebook like a North Korea-style cult & launches angry tirades on staff' | UK | News | Express.co.uk
+https://i.insider.com/5abd0dee7f0a831c008b4b3f?width=700
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.businessinsider.com%2Fleaked-posts-show-facebook-employees-are-worried-about-leakers-suspect-spies-bosworth-memo-2018-3&psig=AOvVaw1Qupt1wQ_1JpNSK0qh6Hkr&ust=1694923365617000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJiDu9ufroEDFQAAAAAdAAAAABAN
+Leaked Posts Show Facebook Employees Are Worried About Leakers, Some Suspect Spies (businessinsider.com)
+
+
+https://wallpapers.com/images/featured/mark-zuckerberg-qogwtd24kss7hzxt.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapers.com%2Fmark-zuckerberg&psig=AOvVaw2b_9Y02GMmNVnJaA3h37A7&ust=1694923634355000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJCenNugroEDFQAAAAAdAAAAABAD
+[100+] Mark Zuckerberg Wallpapers | Wallpapers.com
+
+
+https://d.newsweek.com/en/full/1858267/jeff-bezos-laughing-suit.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newsweek.com%2Fjeff-bezos-villain-laugh-edit-video-tiktok-1614328&psig=AOvVaw1poOZsdANBaegU_k0L5zcE&ust=1694923842410000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMjTxcehroEDFQAAAAAdAAAAABAD
+People Think Jeff Bezos' Laugh Has Become More Villainous As He's Grown Richer (newsweek.com)
+
+
+https://d.newsweek.com/en/full/1597642/jeff-bezos.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newsweek.com%2Fjeff-bezos-instagram-black-lives-matter-racist-email-1509326&psig=AOvVaw2QD-hPpvdYwNhgOqorUXPM&ust=1694924142537000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKj_iNCiroEDFQAAAAAdAAAAABAD
+Jeff Bezos Shares Email From Racist Man Angry About Black Lives Matter: 'You're the Kind of Customer I'm Happy to Lose' (newsweek.com)
+
+
+
+Jeff noises - https://www.101soundboards.com/boards/75593-jeffery-bezos-soundboard 
+
+https://cdn.geekwire.com/wp-content/uploads/2017/07/150825-bezosblue.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geekwire.com%2F2017%2Fjeff-bezos-muscles-way-top-vanity-fairs-new-establishment-list-tech-big-shots%2F&psig=AOvVaw0i16fn1fMPZujMG-uLu_uS&ust=1694924448865000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKiPieejroEDFQAAAAAdAAAAABAN
+Jeff Bezos muscles way to top of Vanity Fair's 'New Establishment' list again above other tech big shots – GeekWire
+https://wallpapercave.com/wp/wp4025589.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapercave.com%2Fjeff-bezos-wallpapers&psig=AOvVaw06rbs71MYwJ_Rgm8u3HM0H&ust=1694924690278000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOC349KkroEDFQAAAAAdAAAAABAD
+Jeff Bezos Wallpapers - Wallpaper Cave
+
+
+
+https://cdn.wccftech.com/wp-content/uploads/2019/02/sad-jeff-bezos.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwccftech.com%2Fwas-jeff-bezos-iphone-x-really-hacked-using-a-whatsapp-message-from-the-saudi-crown-prince%2F&psig=AOvVaw1bsUrhh4w_bRj3HImldDk7&ust=1694924988671000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMij4OGlroEDFQAAAAAdAAAAABAN
+Was Jeff Bezos’ iPhone X Really Hacked Using a WhatsApp Message? (wccftech.com)
+
+
+
+https://thespun.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgzMTI4NDUxODM3OTI4ODY3/dallas-mavericks-v-phoenix-suns.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fthespun.com%2Fnba%2Flook-mark-cubans-reaction-to-sundays-loss-is-going-viral&psig=AOvVaw2FWZDit9-iuwKNVSRVmK2S&ust=1694925241342000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOjm49mmroEDFQAAAAAdAAAAABAH
+Look: Mark Cuban's Reaction To Sunday's Loss Is Going Viral - The Spun: What's Trending In The Sports World Today
+
+
+https://esq.h-cdn.co/assets/17/20/1280x960/sd-aspect-1494867329-cuban-lead-by-rainer-hosch.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.esquire.com%2Flifestyle%2Fmoney%2Fa55079%2Fmark-cuban-gets-loud%2F&psig=AOvVaw2FWZDit9-iuwKNVSRVmK2S&ust=1694925241342000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOjm49mmroEDFQAAAAAdAAAAABAM
+How to Pitch Mark Cuban - Dallas Mavericks Owner and 'Shark Tank' Star on How to Succeed (esquire.com)
+
+
+
+
+
+
+
+
+
+https://www.thesportsbank.net/wp-content/uploads/2012/04/cuban.jpg
+Mark Cuban selects Mavs jersey design finalists, and you can vote! (thesportsbank.net)
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thesportsbank.net%2Fnba%2Fmavericks-mark-cuban-276%2F&psig=AOvVaw1ZzB0rK24qTt1aGqAAHDv_&ust=1694925723202000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCNidyr-oroEDFQAAAAAdAAAAABAI
+
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2FESPN%2Fphotos%2Fa.114588455254586%2F6770173876362644%2F%3Ftype%3D3&psig=AOvVaw2eeacBudiQRff1-9uRFBzj&ust=1694925976421000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOjAkbiproEDFQAAAAAdAAAAABAn
+Facebook
+
+
+https://wallpapercave.com/wp/wp7081184.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapercave.com%2Fmark-cuban-wallpapers&psig=AOvVaw0XpJ0pOjp__X9HXsSFqQfL&ust=1694926277046000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIijlsiqroEDFQAAAAAdAAAAABAD
+Mark Cuban Wallpapers - Wallpaper Cave
+
+
+https://image.cnbcfm.com/api/v1/image/106635599-1595938600994SG-Gates-072820-02-jpg?v=1595938650&w=1920&h=1080
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cnbc.com%2F2020%2F10%2F14%2Fbill-gates-slams-us-on-covid-most-governments-listen-to-scientists.html&psig=AOvVaw35wCiNK8LpcfaGASwR0Bas&ust=1694926579638000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOC46NerroEDFQAAAAAdAAAAABAD
+Bill Gates slams U.S. on Covid: Most governments listen to scientists (cnbc.com)
+
+
+https://d3crmev290s45i.cloudfront.net/frames/1011001xxx/1011001188/1011001188-disc001-file001-frame00180-size-original.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fsearch.alexanderstreet.com%2Fview%2Fwork%2Fbibliographic_entity%257Cvideo_work%257C5112536%2Feconomist-video-bill-gates-how-fund-green-revolution&psig=AOvVaw2OOaR5M9V9lhbJj6P6WJAk&ust=1694926759356000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCID0p6-sroEDFQAAAAAdAAAAABAD
+Economist Video, Bill Gates: How To Fund The Green Revolution | Alexander Street, part of Clarivate
+
+
+
+
+https://macleans.ca/wp-content/uploads/2008/07/bill-gates.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fmacleans.ca%2Fgeneral%2Fbill-gates-hates-microsofts-products-too%2F&psig=AOvVaw2u3FeIj7J7ng6569nuh0Np&ust=1694927200909000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKCokIWuroEDFQAAAAAdAAAAABAh
+Bill Gates hates Microsoft's products too - Macleans.ca
+
+https://i.dailymail.co.uk/i/pix/2012/07/03/article-2168363-00AC97061000044C-541_306x423.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dailymail.co.uk%2Fsciencetech%2Farticle-2168363%2FBill-Gates-e-readers-catch-The-words-Microsoft-founder-lived-regret.html&psig=AOvVaw3STpALOYlap5Ld474S_KcT&ust=1694927426124000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCLDn1O2uroEDFQAAAAAdAAAAABAS
+Bill Gates: 'e-readers will never catch on': The words Microsoft founder has lived to regret | Daily Mail Online
+
+
+https://image.evoke.org/-/media/Images/Evoke/Contributors/BillGates/BillGates_Headshot.jpg?rev=e0ff333fd52a433a9f33fbd03797ad04&hash=96C719A51292318E250B8C57C2367CCB
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.evoke.org%2Fcontributors%2FBillGates&psig=AOvVaw2I9_jKp9lWJLjERAb90QsE&ust=1694927492667000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMirsoyvroEDFQAAAAAdAAAAABAM
+Bill Gates (evoke.org)
+
+https://upload.wikimedia.org/wikipedia/commons/0/09/Andrew_Carnegie%2C_by_Theodore_Marceau.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAndrew_Carnegie&psig=AOvVaw0lNxQTBQixin5aGjC44vJ5&ust=1694927912293000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJDS49OwroEDFQAAAAAdAAAAABAI
+Andrew Carnegie - Wikipedia
+
+
+Windows XP bliss background - https://en.wikipedia.org/wiki/Bliss_%28image%29 
+
+
+https://www.carnegie.ch/wp-content/uploads/2015/08/ac-blue.png
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.carnegie.ch%2Fen%2Fandrew-carnegie%2Fder-stifter-en%2F&psig=AOvVaw0lNxQTBQixin5aGjC44vJ5&ust=1694927912293000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJDS49OwroEDFQAAAAAdAAAAABAh
+The founder | Carnegie
+
+
+
+
+https://media.npr.org/assets/img/2013/07/31/78512241_custom-1d555203a990e9bb8ee3a4c304667aec6817eb8e.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.npr.org%2F2013%2F08%2F01%2F207272849%2Fhow-andrew-carnegie-turned-his-fortune-into-a-library-legacy&psig=AOvVaw0lNxQTBQixin5aGjC44vJ5&ust=1694927912293000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJDS49OwroEDFQAAAAAdAAAAABAm
+How Andrew Carnegie Turned His Fortune Into A Library Legacy : NPR
+
+
+https://media-1.carnegiecouncil.org/cceia/_1200x675_crop_center-center_none/andrew-carnegie-smiling_2023-03-03-053107_pdir.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.carnegiecouncil.org%2Fexplore-engage%2Fclassroom-resources%2Fworksheets-and-excerpts-on-history-and-government%2Fbiography&psig=AOvVaw0lNxQTBQixin5aGjC44vJ5&ust=1694927912293000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJDS49OwroEDFQAAAAAdAAAAABAv
+Andrew Carnegie Biography | Carnegie Council for Ethics in International Affairs
+
+
+https://exploringcapitalism.com/wp-content/uploads/2021/09/3957150790_57749a16d1_z.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fexploringcapitalism.com%2Fandrew-carnegie-industriaist-philanthropist%2F&psig=AOvVaw2yIB-g-Dp1nLzSyADzloH_&ust=1694928815900000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMihyoS0roEDFQAAAAAdAAAAABAI
+Andrew Carnegie, Industrialist & Philanthropist | Exploring Capitalism | Explore The Moral Foundations Of CapitalisM
+
+https://images-na.ssl-images-amazon.com/images/I/51l9DW4tFdL._AC_UL210_SR210,210_.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FLAD-Studio-Sticker-Bumper-Waterproof%2Fdp%2FB08K7CXQHS&psig=AOvVaw3Colvi-vss8OsbUfI43baQ&ust=1694929313810000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCJDXvIi2roEDFQAAAAAdAAAAABAD
+Amazon.com - Zucc Sticker Vinyl Bumper Sticker Decal High Quality Waterproof 5\"
+
+
+
+
+
+
+
+
+
+
+
+https://live.staticflickr.com/4613/40151926671_e3d39f5265_b.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2F158928693%40N02%2F40151926671&psig=AOvVaw3Colvi-vss8OsbUfI43baQ&ust=1694929313810000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCPjB8Oa3roEDFQAAAAAdAAAAABAd
+Give Me The Zucc | Michael.Schiefer | Flickr
+
+
+https://assets.telegraphindia.com/telegraph/8409021e-3911-4de9-a555-e6552684bcbc.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.telegraphindia.com%2Fscience-tech%2Fvarundo-makes-faces-starts-trends-on-facebook%2Fcid%2F1691166&psig=AOvVaw0V5TIIQUyIDCCg15eumthD&ust=1694930089966000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIDky-K4roEDFQAAAAAdAAAAABAI
+Microsoft Kinect | Varundo makes faces, starts trends on Facebook - Telegraph India
+
+https://i.redd.it/a6bwaqutfuh31.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FTIHI%2Fcomments%2Fctkpwa%2Fthanks_i_hate_3_mouth_zuckerberg%2F&psig=AOvVaw3Z3hr7Nej928MUfjUKq6zo&ust=1694930393184000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMDe__G5roEDFQAAAAAdAAAAABAD
+Reddit - Dive into anything
+
+
+
+Cardboard box - https://www.stickpng.com/img/objects/boxes/closed-cardboard-box 
+
+https://live.staticflickr.com/3018/5856986617_c4a0404179_b.jpg
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fcarnegielibrarypgh%2F5856986617&psig=AOvVaw1adGDHkj_ZtJZ73AbECsSu&ust=1694966228184000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKCporK_r4EDFQAAAAAdAAAAABAI
+Exterior view of a Pittsburgh steel mill | Title: [Exterior … | Flickr
+"
 
 [node name="VSeparator2" type="VSeparator" parent="WorksCitedContainer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -197,8 +423,82 @@ theme_override_fonts/font = ExtResource("2_lrlke")
 theme_override_font_sizes/font_size = 60
 text = "Close"
 
+[node name="ControlsContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_et121")
+
+[node name="CenterContainer" type="CenterContainer" parent="ControlsContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Controls" type="Label" parent="ControlsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sxcss")
+theme_override_font_sizes/font_size = 90
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="ControlsContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ControlsContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_s76sq")
+theme_override_font_sizes/font_size = 28
+text = "Player 1:
+Left - A
+Right - D
+Jump - W
+Attack1/Select - Q
+Attack2 - E
+Taunt - S
+"
+
+[node name="HSeparator" type="Control" parent="ControlsContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ControlsContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_s76sq")
+theme_override_font_sizes/font_size = 28
+text = "Player 2:
+Left - LEFT ARROW
+Right - RIGHT ARROW
+Jump - UP ARROW
+Attack1\\Select - PG UP
+Attack2 - PG DN
+Taunt - DOWN ARROW
+"
+
+[node name="VSeparator2" type="VSeparator" parent="ControlsContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Close" type="Button" parent="ControlsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lrlke")
+theme_override_font_sizes/font_size = 60
+text = "Close"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Begin" to="CenterContainer/VBoxContainer/HBoxContainer/Begin" method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Credits" to="CreditsContainer" method="show"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Controls" to="ControlsContainer" method="show"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/WorksCited" to="WorksCitedContainer" method="show"]
 [connection signal="pressed" from="CreditsContainer/CenterContainer/VBoxContainer/Close" to="CreditsContainer" method="hide"]
 [connection signal="pressed" from="WorksCitedContainer/CenterContainer/VBoxContainer/Close" to="WorksCitedContainer" method="hide"]
+[connection signal="pressed" from="ControlsContainer/CenterContainer/VBoxContainer/Close" to="ControlsContainer" method="hide"]

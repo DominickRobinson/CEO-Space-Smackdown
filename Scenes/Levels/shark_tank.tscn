@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr1ieevgh5xqt"]
+[gd_scene load_steps=14 format=3 uid="uid://cr1ieevgh5xqt"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_yp82q"]
+[ext_resource type="AudioStream" uid="uid://6cw4be2s5kr3" path="res://Assets/Music/Angry Horse Gallop.mp3" id="2_k8slm"]
 [ext_resource type="Texture2D" uid="uid://c61k4ay44g14s" path="res://Assets/Art/Backgrounds/shark_tank.jpg" id="2_ykelp"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_wt2r4"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_bskf4"]
@@ -56,6 +57,7 @@ _data = {
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_yp82q")
+music = ExtResource("2_k8slm")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1754, 1127)

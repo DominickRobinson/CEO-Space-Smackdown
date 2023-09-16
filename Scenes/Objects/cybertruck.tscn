@@ -1,18 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfyhnkpeyqw4w"]
+[gd_scene load_steps=6 format=3 uid="uid://cfyhnkpeyqw4w"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/car.gd" id="1_ydsad"]
 [ext_resource type="Texture2D" uid="uid://nk5nilu3ckqi" path="res://Assets/Art/Objects/cybertruck.png" id="2_jy4pu"]
 [ext_resource type="PhysicsMaterial" path="res://Resources/wheel.tres" id="3_m6qug"]
-[ext_resource type="PackedScene" uid="uid://fx7jl6brm37a" path="res://Scenes/Weapons/hurt_box.tscn" id="4_ou14e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2mv1"]
 size = Vector2(76.75, 18.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_urbp6"]
 radius = 18.0278
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_b5cxu"]
-radius = 19.0263
 
 [node name="Cybertruck" type="Node2D"]
 script = ExtResource("1_ydsad")
@@ -59,13 +55,3 @@ shape = SubResource("CircleShape2D_urbp6")
 [node name="PinJoint2D2" type="PinJoint2D" parent="Wheel2"]
 node_a = NodePath("../../Body")
 node_b = NodePath("..")
-
-[node name="HurtBox" parent="." instance=ExtResource("4_ou14e")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-92, 13)
-shape = SubResource("CircleShape2D_b5cxu")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(108, 4)
-shape = SubResource("CircleShape2D_b5cxu")

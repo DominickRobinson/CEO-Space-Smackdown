@@ -160,7 +160,7 @@ func _physics_process(_delta):
 				jumps = 1
 				linear_velocity = Vector2.LEFT.rotated(deg_to_rad(wall_jump_angle_degrees)) * wall_jump_boost
 			elif jumps > 0:
-				linear_velocity.y = -aerial_jump_boost
+#				linear_velocity.y = -aerial_jump_boost
 				jumps = 0
 	else:
 		if Input.is_action_pressed("move_right_alt"):
@@ -190,7 +190,7 @@ func _physics_process(_delta):
 				jumps = 1
 				linear_velocity = Vector2.LEFT.rotated(deg_to_rad(wall_jump_angle_degrees)) * wall_jump_boost
 			elif jumps > 0:
-				linear_velocity.y = -aerial_jump_boost
+#				linear_velocity.y = -aerial_jump_boost
 				jumps = 0
 	
 	clamp_linear_velocity(max_linear_velocity)
