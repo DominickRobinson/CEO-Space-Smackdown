@@ -46,78 +46,78 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("move_left"):
 		# figure out which player this is
-		var player_index := 1
-		if player_pointers_selected[1]:
+		var player_index := 0
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Left)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("move_right"):
-		var player_index := 1
-		if player_pointers_selected[1]:
+		var player_index := 0
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Right)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("jump"):
-		var player_index := 1
-		if player_pointers_selected[1]:
+		var player_index := 0
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Up)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("taunt"):
-		var player_index := 1
-		if player_pointers_selected[1]:
+		var player_index := 0
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Down)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("attack1") or event.is_action_pressed("attack2"):
-		var player_index := 1
+		var player_index := 0
 		player_pointers[player_index].toggle_selected()
 		player_pointers_selected[player_index] = not player_pointers_selected[player_index]
 		player_select_displays[player_index].select_character(player_pointers_selected[player_index])
 		update_selection_status()
 	
 	if event.is_action_pressed("move_left_alt"):
-		var player_index = 0
-		if player_pointers_selected[0]:
+		var player_index = 1
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Left)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("move_right_alt"):
-		var player_index = 0
-		if player_pointers_selected[0]:
+		var player_index = 1
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Right)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("jump_alt"):
-		var player_index = 0
-		if player_pointers_selected[0]:
+		var player_index = 1
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Up)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("taunt_alt"):
-		var player_index = 0
-		if player_pointers_selected[0]:
+		var player_index = 1
+		if player_pointers_selected[player_index]:
 			return
 		var new_target := get_new_target_index(player_pointers[player_index].index, Direction.Down)
 		player_pointers[player_index].index = new_target
 		player_pointers[player_index].target = icon_grid.get_child(new_target)
 		player_select_displays[player_index].set_character(icon_grid.get_child(new_target))
 	if event.is_action_pressed("attack1_alt") or event.is_action_pressed("attack2_alt"):
-		var player_index := 0
+		var player_index := 1
 		player_pointers[player_index].toggle_selected()
 		player_pointers_selected[player_index] = not player_pointers_selected[player_index]
 		player_select_displays[player_index].select_character(player_pointers_selected[player_index])
@@ -139,6 +139,7 @@ func create_select_pointer(color: Color = Color.WHITE, ind: int = -1) -> void:
 	player_select_displays[ind].set_character(icon_grid.get_child(0))
 
 func update_selection_status() -> void:
+	LoadManager.set_characters(player_pointers[0].target.character_scene, player_pointers[1].target.character_scene)
 	for state in player_pointers_selected:
 		if not state:
 			# not ready
