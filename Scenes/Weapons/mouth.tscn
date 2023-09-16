@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsjbp37uo65aa"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Gun.gd" id="1_fodwj"]
+[ext_resource type="PackedScene" uid="uid://b6qwdktclya8w" path="res://Scenes/Weapons/haha.tscn" id="2_exmvo"]
+[ext_resource type="Texture2D" uid="uid://bxkaoc5xi50di" path="res://Assets/Art/Weapons/mouth.png" id="3_s2be5"]
+
+[node name="Mouth" type="Node2D"]
+script = ExtResource("1_fodwj")
+bullet_resource = ExtResource("2_exmvo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 9.53674e-07)
+rotation = -0.504621
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_s2be5")

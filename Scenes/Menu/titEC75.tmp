@@ -1,11 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://cldgcwnjkncgt"]
+[gd_scene load_steps=9 format=3 uid="uid://cldgcwnjkncgt"]
 
-[ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
 [ext_resource type="FontFile" uid="uid://dn4ccg5sikevk" path="res://Resources/Fonts/future_z/Future Z.ttf" id="1_sxcss"]
 [ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="2_lrlke"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="2_tnpqp"]
+[ext_resource type="Shader" path="res://Resources/Shaders/space3.gdshader" id="3_wriqw"]
 [ext_resource type="Script" path="res://Scenes/Menu/Begin.gd" id="4_xsshg"]
-[ext_resource type="PackedScene" uid="uid://bkxrrngqph02m" path="res://Scenes/Menu/character_select_screen.tscn" id="5_lri2x"]
+[ext_resource type="PackedScene" uid="uid://emu8vshkmy0t" path="res://Scenes/test.tscn" id="5_8pvjb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmgg0"]
+shader = ExtResource("3_wriqw")
+shader_parameter/iterations = 17
+shader_parameter/formuparam = 0.53
+shader_parameter/volsteps = 10
+shader_parameter/stepsize = 0.1
+shader_parameter/zoom = 0.8
+shader_parameter/tile = 0.85
+shader_parameter/speed = 0.001
+shader_parameter/brightness = 0.0015
+shader_parameter/darkmatter = 0.3
+shader_parameter/distfading = 0.73
+shader_parameter/saturation = 0.85
+shader_parameter/rotation = null
+shader_parameter/colorampMix = 0.5
+shader_parameter/isColoramp = null
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et121"]
 bg_color = Color(0, 0, 0, 0.839216)
@@ -18,8 +35,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" parent="." instance=ExtResource("1_npj8v")]
+[node name="Panel" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bmgg0")
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -58,7 +81,7 @@ text = "Begin
 "
 flat = true
 script = ExtResource("4_xsshg")
-scene = ExtResource("5_lri2x")
+scene = ExtResource("5_8pvjb")
 
 [node name="VSeparator2" type="Control" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 75)

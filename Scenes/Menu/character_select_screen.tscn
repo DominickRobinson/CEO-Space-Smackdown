@@ -1,27 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkxrrngqph02m"]
+[gd_scene load_steps=7 format=3 uid="uid://bkxrrngqph02m"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
 [ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_52sur"]
 [ext_resource type="PackedScene" uid="uid://c3n4yuiwpc73k" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2vdp"]
 
 [node name="character_select_screen" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = -100.155
-offset_bottom = -100.155
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_gle5c")
 pointer_scene = ExtResource("2_52sur")
+
+[node name="Panel" parent="." instance=ExtResource("5_2ujo8")]
+layout_mode = 1
 
 [node name="IconGrid" type="GridContainer" parent="."]
 layout_mode = 1
@@ -30,13 +30,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -130.0
-offset_right = 196.0
-offset_bottom = 130.0
+offset_left = -262.0
+offset_top = -225.0
+offset_right = 262.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 3
+columns = 4
 
 [node name="TextureRect" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -87,15 +87,23 @@ size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_d2vdp")
 script = ExtResource("2_6fr1w")
 
+[node name="TextureRect7" type="TextureRect" parent="IconGrid"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
+
 [node name="BottomBar" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -100.0
-offset_top = 200.0
-offset_right = 100.0
-offset_bottom = 400.0
+offset_left = -300.0
+offset_top = 450.0
+offset_right = 300.0
+offset_bottom = 650.0
 grow_horizontal = 2
 theme_override_constants/separation = 200
 

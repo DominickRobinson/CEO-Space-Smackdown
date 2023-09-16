@@ -10,6 +10,8 @@ extends Weapon
 func _ready():
 	spring.node_a = get_parent().get_path()
 	spring.node_b = controller.get_path()
+	
+	controller.add_collision_exception_with(get_parent())
 
 
 func _physics_process(delta):

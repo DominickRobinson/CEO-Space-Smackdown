@@ -17,8 +17,8 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_xsx3q")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Controller"]
-length = 100.0
-rest_length = 50.0
+rest_length = 10.0
+stiffness = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Controller"]
 position = Vector2(2, 3)
