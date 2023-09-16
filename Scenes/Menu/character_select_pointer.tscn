@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr4m3hb2374mt"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectPointer.gd" id="1_yljut"]
+[ext_resource type="Texture2D" uid="uid://cxphfy5av3stj" path="res://Assets/Art/select.png" id="2_1slm2"]
+
+[node name="character_select_pointer" type="Node2D"]
+script = ExtResource("1_yljut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1slm2")
+centered = false

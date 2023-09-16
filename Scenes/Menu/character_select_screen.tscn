@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkxrrngqph02m"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
+[ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
+[ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_52sur"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2vdp"]
+
+[node name="character_select_screen" type="Node2D"]
+script = ExtResource("1_gle5c")
+pointer_scene = ExtResource("2_52sur")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 204.0
+offset_bottom = 204.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
+
+[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
+
+[node name="TextureRect6" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+script = ExtResource("2_6fr1w")
