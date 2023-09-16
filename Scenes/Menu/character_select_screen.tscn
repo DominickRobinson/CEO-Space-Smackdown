@@ -1,10 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkxrrngqph02m"]
+[gd_scene load_steps=12 format=3 uid="uid://bkxrrngqph02m"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
 [ext_resource type="PackedScene" uid="uid://dr4m3hb2374mt" path="res://Scenes/Menu/character_select_pointer.tscn" id="2_52sur"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://c3n4yuiwpc73k" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
 [ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
+=======
+[ext_resource type="Texture2D" uid="uid://dgyc2ikmm7dqe" path="res://Assets/Art/Characters/Musk/MuskIdle.png" id="4_j6oo1"]
+[ext_resource type="PackedScene" uid="uid://doi7mr86bkho7" path="res://Scenes/Menu/player_select_display.tscn" id="4_u4l1u"]
+[ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="5_2ujo8"]
+[ext_resource type="Texture2D" uid="uid://cnr6cm8t0vei0" path="res://Assets/Art/Characters/Bezos/BezosIdle.png" id="6_t1gf1"]
+[ext_resource type="Texture2D" uid="uid://cabf72oo7essf" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeIdle.png" id="7_8p0bo"]
+[ext_resource type="Texture2D" uid="uid://covv76247a4ny" path="res://Assets/Art/Characters/Cuban/CubanIdle.png" id="8_f16rf"]
+[ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="10_5viwe"]
+>>>>>>> Stashed changes
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2vdp"]
 
@@ -43,33 +53,44 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_d2vdp")
+texture = ExtResource("4_j6oo1")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
-character_name = "JEFF"
+character_name = "ELON MUSK"
 
 [node name="TextureRect2" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_d2vdp")
+texture = ExtResource("6_t1gf1")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
+character_name = "JEFFREY BEZOS"
 
 [node name="TextureRect3" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_d2vdp")
+texture = ExtResource("7_8p0bo")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
+character_name = "MARK ZUCKERBERG (fake)"
 
 [node name="TextureRect4" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_d2vdp")
+texture = ExtResource("8_f16rf")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
+character_name = "MARK CUBAN"
 
 [node name="TextureRect5" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -77,7 +98,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_d2vdp")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
+character_name = "BILL GATES"
 
 [node name="TextureRect6" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -85,7 +109,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_d2vdp")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
+character_name = "MARK ZUCKERBERG"
 
 [node name="TextureRect7" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -93,7 +120,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_d2vdp")
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("2_6fr1w")
+character_name = "ANDREW CARNEGIE"
+
+[node name="TextureRect8" type="TextureRect" parent="IconGrid"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_d2vdp")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("2_6fr1w")
+character_name = "SAM "
 
 [node name="BottomBar" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -127,17 +168,18 @@ grow_horizontal = 2
 
 [node name="Label" type="Label" parent="FightButton"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = 243.0
+offset_right = 83.0
+offset_bottom = 287.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_5viwe")
+theme_override_font_sizes/font_size = 50
 text = "BEGIN!
 (ENTER)"
 horizontal_alignment = 1

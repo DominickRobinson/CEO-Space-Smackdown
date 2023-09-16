@@ -2,6 +2,7 @@ extends Node
 
 var player1_character : PackedScene
 var player2_character : PackedScene
+var level_resource : PackedScene
 
 var level_select : PackedScene = load("res://Scenes/Menu/level_select_screen.tscn")
 
