@@ -4,6 +4,9 @@ extends RigidBody2D
 
 @export var free_on_impact : bool = true
 
+@export var never_free : bool = false
+
+
 @export var damage : float = 5.0
 @export var impulse_length : float = 700.0
 
@@ -24,4 +27,4 @@ func _on_hit(body : Node):
 		queue_free()
 	else:
 		await get_tree().create_timer(5.0).timeout
-		queue_free()
+		if not never_free: queue_free()

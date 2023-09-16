@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3xig27ok6nfo"]
+[gd_scene load_steps=12 format=3 uid="uid://d3xig27ok6nfo"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_cea6n"]
 [ext_resource type="Texture2D" uid="uid://covv76247a4ny" path="res://Assets/Art/Characters/Cuban/CubanIdle.png" id="2_iwt3b"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b23java5wqnc4" path="res://Assets/Art/Characters/Cuban/CubanAttack1.png" id="4_yc4p4"]
 [ext_resource type="Texture2D" uid="uid://ceriqax6sell3" path="res://Assets/Art/Characters/Cuban/CubanAttack2.png" id="5_a0o0v"]
 [ext_resource type="Texture2D" uid="uid://w1jeosk8dcj" path="res://Assets/Art/Characters/Cuban/CubanTaunt.png" id="6_alx10"]
+[ext_resource type="AudioStream" uid="uid://daarndjpy151" path="res://Assets/Sound/Cuban/What theHell is that.mp3" id="7_g4ka1"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_oxdqp"]
 [ext_resource type="PackedScene" uid="uid://cxwi8mlky7iyv" path="res://Scenes/Weapons/shark.tscn" id="8_p77hf"]
 [ext_resource type="PackedScene" uid="uid://b51bi3vgp08e" path="res://Scenes/Weapons/hands_basketball.tscn" id="9_1y0cx"]
@@ -20,6 +21,7 @@ texture_hit = ExtResource("3_h650v")
 texture_attack1 = ExtResource("4_yc4p4")
 texture_attack2 = ExtResource("5_a0o0v")
 texture_taunt = ExtResource("6_alx10")
+sound_hit = ExtResource("7_g4ka1")
 weapon1 = NodePath("HandsBasketball")
 weapon2 = NodePath("Shark")
 

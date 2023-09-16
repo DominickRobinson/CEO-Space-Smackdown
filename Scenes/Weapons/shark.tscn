@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxwi8mlky7iyv"]
+[gd_scene load_steps=5 format=3 uid="uid://cxwi8mlky7iyv"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/hammer.gd" id="1_eifrp"]
 [ext_resource type="Texture2D" uid="uid://ca06o37m2iqor" path="res://Assets/Art/Weapons/shark.png" id="2_ayhav"]
+[ext_resource type="PackedScene" uid="uid://fx7jl6brm37a" path="res://Scenes/Weapons/hurt_box.tscn" id="3_rao4j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nes7l"]
+radius = 33.9686
+height = 67.9372
 
 [node name="Shark" type="CollisionPolygon2D"]
 polygon = PackedVector2Array(6, -17, 21, -7, 29, -8, 36, -11, 56, -32, 51, -61, 56, -59, 68, -40, 93, -42, 107, -40, 119, -32, 122, -26, 118, -16, 115, -6, 126, 6, 126, 10, 117, 6, 105, 10, 91, 2, 72, 6, 58, 6, 43, 27, 36, 37, 32, 39, 44, 17, 45, 5, 27, 5, 14, 21, 10, 22, 13, 6, 11, -2, 6, -6, -9, -21)
 script = ExtResource("1_eifrp")
+damage = 15.0
+impulse_length = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(62, -17)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_ayhav")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_rao4j")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(98, -16)
+rotation = -1.54813
+shape = SubResource("CapsuleShape2D_nes7l")

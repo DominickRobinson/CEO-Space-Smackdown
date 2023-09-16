@@ -1,7 +1,11 @@
 class_name Level
 extends Node2D
 
+
+@export var music : AudioStream
+
 @export var gravity_multiplier : float = 1.0
+
 
 @onready var p1_spawn = $PlayerOneSpawn
 @onready var p2_spawn = $PlayerTwoSpawn
@@ -13,6 +17,9 @@ extends Node2D
 var game_over = false
 
 func _ready():
+	
+	SoundManager.play_music(music)
+	
 	var p1 = LoadManager.player1_character.instantiate() as Player
 	p1.player_number = 1
 	p1.global_position = p1_spawn.global_position

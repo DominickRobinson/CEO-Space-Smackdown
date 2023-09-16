@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gxi421mqll0y"]
+[gd_scene load_steps=12 format=3 uid="uid://gxi421mqll0y"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_40clp"]
 [ext_resource type="Texture2D" uid="uid://csujijucgeucg" path="res://Assets/Art/Characters/Gates/GatesIdle.png" id="2_jkg4a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bfdb8vh2wwp50" path="res://Assets/Art/Characters/Gates/GatesAttack1.png" id="4_r484c"]
 [ext_resource type="Texture2D" uid="uid://cs0uugvnymh5e" path="res://Assets/Art/Characters/Gates/GatesAttack2.png" id="5_w5q42"]
 [ext_resource type="Texture2D" uid="uid://dag6oykfr0hmd" path="res://Assets/Art/Characters/Gates/GatesTaunt.png" id="6_3735d"]
+[ext_resource type="AudioStream" uid="uid://bnjvvsqy2r5ca" path="res://Assets/Sound/Gates/BillGates.mp3" id="7_bvifq"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="8_bhpoj"]
 [ext_resource type="PackedScene" uid="uid://teima8o28dfw" path="res://Scenes/Weapons/mouse.tscn" id="8_m8gfy"]
 [ext_resource type="PackedScene" uid="uid://drtsbekk6wfgv" path="res://Scenes/Weapons/halo_gun.tscn" id="9_jmphc"]
@@ -20,6 +21,10 @@ texture_hit = ExtResource("3_lv5bg")
 texture_attack1 = ExtResource("4_r484c")
 texture_attack2 = ExtResource("5_w5q42")
 texture_taunt = ExtResource("6_3735d")
+sound_hit = ExtResource("7_bvifq")
+sound_attack1 = ExtResource("7_bvifq")
+sound_attack2 = ExtResource("7_bvifq")
+sound_taunt = ExtResource("7_bvifq")
 weapon1 = NodePath("Flamethrower")
 weapon2 = NodePath("Mouse")
 

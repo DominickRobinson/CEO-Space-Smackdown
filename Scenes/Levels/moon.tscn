@@ -57,46 +57,46 @@ _data = {
 script = ExtResource("1_1jhv0")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
-position = Vector2(1754, 1127)
-scale = Vector2(5, 3.467)
+position = Vector2(1935, 1091)
+scale = Vector2(2.5, 1.7)
 texture = ExtResource("2_4wjul")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(226, 533)
+position = Vector2(1259, 832)
 anchor_mode = 0
-zoom = Vector2(0.378, 0.546)
+zoom = Vector2(0.831, 1.2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(3, 3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-47, 26)
-polygon = PackedVector2Array(110.333, 281.333, 155.667, 283.667, 173, 290.667, 212.667, 292.667, 258.333, 297.333, 284.667, 302, 324.667, 308.667, 334, 310.333, 365.333, 315.667, 373.667, 315, 428, 324.667, 449, 325.667, 499, 340, 510.333, 339.333, 520.667, 345.333, 541, 345, 562.667, 359.333, 588.333, 368, 604.667, 371, 615, 367.333, 625, 374.667, 635.667, 374.667, 647.333, 368.667, 656, 372.667, 693.333, 373.667, 758, 369.667, 805.333, 358.667, 888.333, 347.333, 922.333, 344.333, 967, 335, 1010.33, 325.333, 1043, 323, 1083.67, 322.667, 1131.33, 315, 1155, 314.667, 1151.33, 548, 112.333, 541.667)
+polygon = PackedVector2Array(430.667, 301.667, 473, 310.333, 504, 312, 541.667, 319, 570.667, 322.667, 603, 327, 622, 331.667, 632, 333, 638.667, 337, 653.667, 339, 676, 347.667, 685, 348.667, 696, 350, 701.333, 347.333, 705.333, 350.333, 726, 349.333, 754.667, 346.667, 775, 343.333, 813, 337.333, 837.667, 334.333, 855.667, 333.333, 867, 328, 879.333, 326.333, 902.333, 325, 952, 321, 954.333, 430, 428, 434.667)
 
 [node name="BlastZone" type="Area2D" parent="."]
 script = ExtResource("3_6brat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(58, 648)
+position = Vector2(1104, 744)
 shape = SubResource("RectangleShape2D_2nw5l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(3472, 688)
+position = Vector2(2784, 693)
 shape = SubResource("RectangleShape2D_6pye1")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(1848, 1920)
+position = Vector2(1860, 1940)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(1827, 307)
+position = Vector2(1811, 619)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
-position = Vector2(812, 951)
+position = Vector2(1368, 909)
 
 [node name="PlayerTwoSpawn" type="Node2D" parent="."]
-position = Vector2(2574, 969)
+position = Vector2(2524, 935)
 
 [node name="PlayerWin" type="CanvasLayer" parent="."]
 

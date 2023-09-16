@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgmao0s6sb5ns"]
+[gd_scene load_steps=15 format=3 uid="uid://dgmao0s6sb5ns"]
 
 [ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_2e0in"]
 [ext_resource type="Texture2D" uid="uid://cnr6cm8t0vei0" path="res://Assets/Art/Characters/Bezos/BezosIdle.png" id="2_0olse"]
@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://y58gl2b7ujph" path="res://Assets/Art/Characters/Bezos/BezosAttack2.png" id="5_5qb84"]
 [ext_resource type="Texture2D" uid="uid://dwypjdstkgbsp" path="res://Assets/Art/Characters/Bezos/BezosTaunt.png" id="6_qx64o"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_i3nhl"]
+[ext_resource type="AudioStream" uid="uid://byuo1o7syf2n0" path="res://Assets/Sound/Grunts and Shit/Grr.mp3" id="7_io1j1"]
+[ext_resource type="AudioStream" uid="uid://vqtjubtykopt" path="res://Assets/Sound/Jeff/HellYes.mp3" id="7_y23gl"]
+[ext_resource type="AudioStream" uid="uid://dm3322bqkftsx" path="res://Assets/Sound/Jeff/I Sleep at Midnight.mp3" id="8_ee1rm"]
 [ext_resource type="PackedScene" uid="uid://dt7ro8qp6likf" path="res://Scenes/Weapons/sound_wave.tscn" id="9_0m5dk"]
 [ext_resource type="PackedScene" uid="uid://ctoopfovxgucp" path="res://Scenes/Weapons/hands_box.tscn" id="9_30cv2"]
+[ext_resource type="AudioStream" uid="uid://1et5t35708ox" path="res://Assets/Sound/Jeff/laughter.mp3" id="9_tgx56"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
 radius = 32.0
@@ -20,6 +24,10 @@ texture_hit = ExtResource("3_0gvd4")
 texture_attack1 = ExtResource("4_jkln3")
 texture_attack2 = ExtResource("5_5qb84")
 texture_taunt = ExtResource("6_qx64o")
+sound_hit = ExtResource("7_io1j1")
+sound_attack1 = ExtResource("7_y23gl")
+sound_attack2 = ExtResource("8_ee1rm")
+sound_taunt = ExtResource("9_tgx56")
 weapon1 = NodePath("SoundWave")
 weapon2 = NodePath("HandsBox")
 

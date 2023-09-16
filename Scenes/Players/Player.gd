@@ -3,13 +3,20 @@ extends RigidBody2D
 
 @export var player_number : int = 1
 
+@export_group("Textures")
 @export var texture_idle : Texture2D 
 @export var texture_hit : Texture2D
 @export var texture_attack1 : Texture2D
 @export var texture_attack2 : Texture2D
 @export var texture_taunt : Texture2D
 
+@export_group("Sounds")
+@export var sound_hit : AudioStream
+@export var sound_attack1 : AudioStream
+@export var sound_attack2 : AudioStream
+@export var sound_taunt : AudioStream
 
+@export_group("Weapons")
 @export var weapon1 : Weapon
 @export var weapon2 : Weapon
 
@@ -65,6 +72,7 @@ func _physics_process(_delta):
 	
 	if player_number == 1:
 		if Input.is_action_just_pressed("taunt"):
+			SoundManager.play_sound(sound_taunt)
 			set_sprite(texture_taunt)
 		if Input.is_action_just_released("taunt"):
 			set_sprite(texture_idle)
@@ -72,6 +80,7 @@ func _physics_process(_delta):
 		
 		if Input.is_action_just_pressed("attack1"):
 			if is_instance_valid(weapon1):
+				SoundManager.play_sound(sound_attack1)
 				weapon1.toggle()
 				if is_instance_valid(weapon2): weapon2.deactivate()
 				set_sprite(texture_attack1)
@@ -80,6 +89,7 @@ func _physics_process(_delta):
 		
 		if Input.is_action_just_pressed("attack2"):
 			if is_instance_valid(weapon2):
+				SoundManager.play_sound(sound_attack2)				
 				weapon2.toggle()
 				if is_instance_valid(weapon1): weapon1.deactivate()
 				set_sprite(texture_attack2)
@@ -87,6 +97,7 @@ func _physics_process(_delta):
 				set_sprite(texture_idle)
 	else:
 		if Input.is_action_just_pressed("taunt_alt"):
+			SoundManager.play_sound(sound_taunt)
 			set_sprite(texture_taunt)
 		if Input.is_action_just_released("taunt_alt"):
 			set_sprite(texture_idle)
@@ -94,6 +105,7 @@ func _physics_process(_delta):
 		
 		if Input.is_action_just_pressed("attack1_alt"):
 			if is_instance_valid(weapon1):
+				SoundManager.play_sound(sound_attack1)
 				weapon1.toggle()
 				if is_instance_valid(weapon2): weapon2.deactivate()
 				set_sprite(texture_attack1)
@@ -102,6 +114,7 @@ func _physics_process(_delta):
 		
 		if Input.is_action_just_pressed("attack2_alt"):
 			if is_instance_valid(weapon2):
+				SoundManager.play_sound(sound_attack2)				
 				weapon2.toggle()
 				if is_instance_valid(weapon1): weapon1.deactivate()
 				set_sprite(texture_attack2)
@@ -229,6 +242,8 @@ func take_damage(amount:float, impulse:Vector2) -> void:
 	in_hitstun = true
 	modulate = Color(0.5, 0.5, 0.5)
 	hit.emit()
+	SoundManager.play_sound(sound_hit)
+	
 	
 	await hitstun_timer.timeout
 	in_hitstun = false

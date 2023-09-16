@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cldgcwnjkncgt"]
+[gd_scene load_steps=8 format=3 uid="uid://cldgcwnjkncgt"]
 
+[ext_resource type="Script" path="res://Scenes/Menu/title.gd" id="1_bmk76"]
 [ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
 [ext_resource type="FontFile" uid="uid://dn4ccg5sikevk" path="res://Resources/Fonts/future_z/Future Z.ttf" id="1_sxcss"]
 [ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="2_lrlke"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bmk76")
 
 [node name="Panel" parent="." instance=ExtResource("1_npj8v")]
 layout_mode = 1
