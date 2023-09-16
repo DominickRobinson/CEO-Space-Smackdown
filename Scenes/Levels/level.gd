@@ -2,8 +2,6 @@ class_name Level
 extends Node2D
 
 
-@export var player1_resource : PackedScene
-@export var player2_resource : PackedScene
 
 @onready var p1_spawn = $PlayerOneSpawn
 @onready var p2_spawn = $PlayerTwoSpawn
@@ -13,12 +11,12 @@ extends Node2D
 @onready var end_anim = $PlayerWin/AnimationPlayer
 
 func _ready():
-	var p1 = player1_resource.instantiate() as Player
+	var p1 = LoadManager.player1_character.instantiate() as Player
 	p1.player_number = 1
 	p1.global_position = p1_spawn.global_position
 	get_tree().current_scene.add_child(p1)
 	
-	var p2 = player1_resource.instantiate() as Player
+	var p2 = LoadManager.player2_character.instantiate() as Player
 	p2.player_number = 2
 	p2.global_position = p2_spawn.global_position
 	get_tree().current_scene.add_child(p2)

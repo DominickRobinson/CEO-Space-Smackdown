@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://vuur8xxn2cog"]
+[gd_scene load_steps=12 format=3 uid="uid://vuur8xxn2cog"]
 
 [ext_resource type="Texture2D" uid="uid://d1hu45cxiqxle" path="res://Assets/Art/Backgrounds/bliss.png" id="1_jw48k"]
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_temhb"]
-[ext_resource type="PackedScene" uid="uid://cu7tyxjgkvb2y" path="res://Scenes/Players/player.tscn" id="2_toynt"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="4_sxmdn"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="5_7tj52"]
 
@@ -56,8 +55,6 @@ _data = {
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_temhb")
-player1_resource = ExtResource("2_toynt")
-player2_resource = ExtResource("2_toynt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

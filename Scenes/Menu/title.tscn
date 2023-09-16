@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cldgcwnjkncgt"]
+[gd_scene load_steps=7 format=3 uid="uid://cldgcwnjkncgt"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
+[ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_npj8v"]
 [ext_resource type="FontFile" uid="uid://dn4ccg5sikevk" path="res://Resources/Fonts/future_z/Future Z.ttf" id="1_sxcss"]
 [ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="2_lrlke"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="2_tnpqp"]
 [ext_resource type="Script" path="res://Scenes/Menu/Begin.gd" id="4_xsshg"]
-[ext_resource type="PackedScene" uid="uid://bkxrrngqph02m" path="res://Scenes/Menu/character_select_screen.tscn" id="5_lri2x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et121"]
 bg_color = Color(0, 0, 0, 0.839216)
@@ -58,7 +57,6 @@ text = "Begin
 "
 flat = true
 script = ExtResource("4_xsshg")
-scene = ExtResource("5_lri2x")
 
 [node name="VSeparator2" type="Control" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 75)
