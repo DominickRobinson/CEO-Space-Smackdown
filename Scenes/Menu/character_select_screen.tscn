@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bkxrrngqph02m"]
+[gd_scene load_steps=29 format=3 uid="uid://bkxrrngqph02m"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
@@ -9,18 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://b1kawynk1ca0y" path="res://Scenes/Players/elon.tscn" id="6_iv32o"]
 [ext_resource type="Texture2D" uid="uid://cnr6cm8t0vei0" path="res://Assets/Art/Characters/Bezos/BezosIdle.png" id="6_t1gf1"]
 [ext_resource type="Texture2D" uid="uid://cabf72oo7essf" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeIdle.png" id="7_8p0bo"]
+[ext_resource type="AudioStream" uid="uid://dt8a5nwh0ognk" path="res://Assets/Sound/CharacterSelect/Musk.mp3" id="7_vi5vf"]
 [ext_resource type="Texture2D" uid="uid://covv76247a4ny" path="res://Assets/Art/Characters/Cuban/CubanIdle.png" id="8_f16rf"]
 [ext_resource type="PackedScene" uid="uid://dgmao0s6sb5ns" path="res://Scenes/Players/jeff.tscn" id="8_fuxko"]
 [ext_resource type="PackedScene" uid="uid://birrydot1f25b" path="res://Scenes/Players/zuckerberg.tscn" id="8_ylvfg"]
+[ext_resource type="AudioStream" uid="uid://ckltcurv4cv7g" path="res://Assets/Sound/CharacterSelect/Bezos.mp3" id="10_1gom0"]
 [ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="10_5viwe"]
 [ext_resource type="Texture2D" uid="uid://csujijucgeucg" path="res://Assets/Art/Characters/Gates/GatesIdle.png" id="12_57uwh"]
 [ext_resource type="PackedScene" uid="uid://d3xig27ok6nfo" path="res://Scenes/Players/cuban.tscn" id="12_lm2eq"]
+[ext_resource type="AudioStream" uid="uid://be8s60hnesjak" path="res://Assets/Sound/CharacterSelect/ZuckerbergFake.mp3" id="13_iemsj"]
 [ext_resource type="Texture2D" uid="uid://b07bj86lbf1bb" path="res://Assets/Art/Characters/Zucc/ZuccIdle.png" id="13_o2fvs"]
 [ext_resource type="PackedScene" uid="uid://gxi421mqll0y" path="res://Scenes/Players/gates.tscn" id="14_3cm3j"]
 [ext_resource type="Texture2D" uid="uid://c83awmwsxuqo6" path="res://Assets/Art/Characters/Carnegie/CarnegieIdle.png" id="14_qpyri"]
+[ext_resource type="AudioStream" uid="uid://cgsupy0xyvx1t" path="res://Assets/Sound/CharacterSelect/Cuban.mp3" id="16_imks5"]
 [ext_resource type="PackedScene" uid="uid://dk4wyr6trryaf" path="res://Scenes/Players/zucc.tscn" id="16_mpor7"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="17_n7xrb"]
 [ext_resource type="PackedScene" uid="uid://bp2txumtf1fvc" path="res://Scenes/Players/carnegie.tscn" id="18_8sr8c"]
+[ext_resource type="AudioStream" uid="uid://75627d3tqgai" path="res://Assets/Sound/CharacterSelect/Gates.mp3" id="19_gajr0"]
+[ext_resource type="AudioStream" uid="uid://dfkpvafe1av1i" path="res://Assets/Sound/CharacterSelect/Zuckerberg.mp3" id="22_lpbjq"]
+[ext_resource type="AudioStream" uid="uid://cn5f156gsxfms" path="res://Assets/Sound/CharacterSelect/Carnegie.mp3" id="25_day4d"]
 
 [node name="character_select_screen" type="Control"]
 layout_mode = 3
@@ -63,6 +70,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("6_iv32o")
 character_name = "ELON MUSK"
+select_sound = ExtResource("7_vi5vf")
 
 [node name="TextureRect2" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -75,6 +83,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("8_fuxko")
 character_name = "JEFFREY BEZOS"
+select_sound = ExtResource("10_1gom0")
 
 [node name="TextureRect3" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -87,6 +96,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("8_ylvfg")
 character_name = "MARK ZUCKERBERG (fake)"
+select_sound = ExtResource("13_iemsj")
 
 [node name="TextureRect4" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -99,6 +109,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("12_lm2eq")
 character_name = "MARK CUBAN"
+select_sound = ExtResource("16_imks5")
 
 [node name="TextureRect5" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -111,6 +122,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("14_3cm3j")
 character_name = "BILL GATES"
+select_sound = ExtResource("19_gajr0")
 
 [node name="TextureRect6" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -123,6 +135,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("16_mpor7")
 character_name = "MARK ZUCKERBERG"
+select_sound = ExtResource("22_lpbjq")
 
 [node name="TextureRect7" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -135,6 +148,7 @@ stretch_mode = 4
 script = ExtResource("2_6fr1w")
 character_scene = ExtResource("18_8sr8c")
 character_name = "ANDREW CARNEGIE"
+select_sound = ExtResource("25_day4d")
 
 [node name="BottomBar" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -188,7 +202,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("10_5viwe")
 theme_override_font_sizes/font_size = 50
-text = "BEGIN!
+text = "Select STAGE!
 (ENTER)"
 horizontal_alignment = 1
 

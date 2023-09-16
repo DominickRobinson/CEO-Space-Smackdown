@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djw8ogy31m2fm"]
+[gd_scene load_steps=17 format=3 uid="uid://djw8ogy31m2fm"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_1jhv0"]
 [ext_resource type="Texture2D" uid="uid://c7p3k5efm8eys" path="res://Assets/Art/Backgrounds/Moon.png" id="2_4wjul"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_qaw1u"]
 [ext_resource type="PackedScene" uid="uid://csuqvbnfdxkhx" path="res://Scenes/Objects/chair.tscn" id="6_jmner"]
 [ext_resource type="PackedScene" uid="uid://cxwi8mlky7iyv" path="res://Scenes/Weapons/shark.tscn" id="7_6d3t8"]
+[ext_resource type="PackedScene" uid="uid://cemm1ga345552" path="res://Scenes/Objects/rocket.tscn" id="8_vqbqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
 size = Vector2(146, 2826)
@@ -143,5 +144,9 @@ gravity_scale = 0.2
 
 [node name="Shark" parent="Node2D/RigidBody2D" instance=ExtResource("7_6d3t8")]
 activate_on_start = true
+
+[node name="Rocket" parent="Node2D" instance=ExtResource("8_vqbqe")]
+position = Vector2(1867, -4878)
+rotation = 1.50371
 
 [connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

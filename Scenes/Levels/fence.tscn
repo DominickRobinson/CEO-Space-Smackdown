@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvu5xsjayaq8u"]
+[gd_scene load_steps=15 format=3 uid="uid://dvu5xsjayaq8u"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_xyb7v"]
+[ext_resource type="AudioStream" uid="uid://bchnuobmn1aom" path="res://Assets/Music/tartan.mp3" id="2_8wjax"]
 [ext_resource type="Texture2D" uid="uid://lipwvg1dx85y" path="res://Assets/Art/Backgrounds/the_fence.jpg" id="2_ae114"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_5b564"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_isilr"]
@@ -61,6 +62,7 @@ bounce = 0.3
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xyb7v")
+music = ExtResource("2_8wjax")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1754, 1127)
