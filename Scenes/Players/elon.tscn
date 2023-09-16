@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cylbe1lktidps" path="res://Assets/Art/Characters/Musk/MuskAttack2.png" id="5_cr1q2"]
 [ext_resource type="Texture2D" uid="uid://b8ngdoeir8h2s" path="res://Assets/Art/Characters/Musk/MuskTaunt.png" id="6_3exl7"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_5p571"]
-[ext_resource type="AudioStream" uid="uid://n3cvvns2qmwl" path="res://Assets/Sound/Grunts and Shit/Nooo.mp3" id="7_8qd5w"]
+[ext_resource type="AudioStream" uid="uid://bk43q25lnfaad" path="res://Assets/Sound/Grunts and Shit/Nooo.mp3" id="7_8qd5w"]
 [ext_resource type="PackedScene" uid="uid://cdwc6wmvr5e5u" path="res://Scenes/Weapons/flamethrower.tscn" id="8_4qfmq"]
 [ext_resource type="AudioStream" uid="uid://bj5snwtodw2cm" path="res://Assets/Sound/Musk/Easy.mp3" id="8_vrg5u"]
 [ext_resource type="AudioStream" uid="uid://cjvylr0lq7wc1" path="res://Assets/Sound/Musk/Yeah.mp3" id="9_hk1i0"]

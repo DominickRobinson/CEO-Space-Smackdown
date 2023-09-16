@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://djw8ogy31m2fm"]
+[gd_scene load_steps=16 format=3 uid="uid://djw8ogy31m2fm"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_1jhv0"]
 [ext_resource type="Texture2D" uid="uid://c7p3k5efm8eys" path="res://Assets/Art/Backgrounds/Moon.png" id="2_4wjul"]
+[ext_resource type="AudioStream" uid="uid://si5whw5qb6jt" path="res://Assets/Music/Alien Encounter.mp3" id="2_uygbu"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_6brat"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_qaw1u"]
+[ext_resource type="PackedScene" uid="uid://csuqvbnfdxkhx" path="res://Scenes/Objects/chair.tscn" id="6_jmner"]
+[ext_resource type="PackedScene" uid="uid://cxwi8mlky7iyv" path="res://Scenes/Weapons/shark.tscn" id="7_6d3t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
 size = Vector2(146, 2826)
@@ -53,8 +56,12 @@ _data = {
 "show": SubResource("Animation_143di")
 }
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wcxeg"]
+bounce = 0.9
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_1jhv0")
+music = ExtResource("2_uygbu")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1935, 1091)
@@ -89,7 +96,7 @@ position = Vector2(1860, 1940)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(1811, 619)
+position = Vector2(1804, 222)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
@@ -120,5 +127,21 @@ theme_override_font_sizes/font_size = 100
 libraries = {
 "": SubResource("AnimationLibrary_qtn10")
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Chair" parent="Node2D" instance=ExtResource("6_jmner")]
+position = Vector2(1518, 970)
+
+[node name="Chair2" parent="Node2D" instance=ExtResource("6_jmner")]
+position = Vector2(2463, 982)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
+position = Vector2(1963, 225)
+physics_material_override = SubResource("PhysicsMaterial_wcxeg")
+gravity_scale = 0.2
+
+[node name="Shark" parent="Node2D/RigidBody2D" instance=ExtResource("7_6d3t8")]
+activate_on_start = true
 
 [connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

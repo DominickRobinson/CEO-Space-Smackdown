@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlqk140sx0442"]
+[gd_scene load_steps=13 format=3 uid="uid://dlqk140sx0442"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_424jw"]
+[ext_resource type="AudioStream" uid="uid://dtiidfow0h234" path="res://Assets/Music/Mars Confusion.mp3" id="2_ufnoi"]
 [ext_resource type="Texture2D" uid="uid://d1hu45cxiqxle" path="res://Assets/Art/Backgrounds/bliss.png" id="2_xqnnn"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_8ked8"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_wqei5"]
@@ -55,6 +56,7 @@ _data = {
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_424jw")
+music = ExtResource("2_ufnoi")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1775.5, 1059.5)
@@ -90,7 +92,7 @@ position = Vector2(1816, 1905)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(2047, 498)
+position = Vector2(2037, 259)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvu5xsjayaq8u"]
+[gd_scene load_steps=14 format=3 uid="uid://dvu5xsjayaq8u"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_xyb7v"]
 [ext_resource type="Texture2D" uid="uid://lipwvg1dx85y" path="res://Assets/Art/Backgrounds/the_fence.jpg" id="2_ae114"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_5b564"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_isilr"]
+[ext_resource type="PackedScene" uid="uid://xgqlupmmuhvl" path="res://Scenes/Weapons/Bullets/heart.tscn" id="5_1runh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
 size = Vector2(146, 2826)
@@ -53,6 +54,11 @@ _data = {
 "show": SubResource("Animation_143di")
 }
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0g6hm"]
+resource_local_to_scene = true
+friction = 0.0
+bounce = 0.3
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xyb7v")
 
@@ -89,7 +95,7 @@ position = Vector2(1868, 1866)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
-position = Vector2(1827, 307)
+position = Vector2(1795, -617)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
@@ -120,5 +126,67 @@ theme_override_font_sizes/font_size = 100
 libraries = {
 "": SubResource("AnimationLibrary_qtn10")
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Heart" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(679, -495)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart2" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(897, -294)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart3" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(1163, -498)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart4" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(1285, -235)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart5" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(1627, -492)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart6" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(1822, -243)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart7" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(2096, -455)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart8" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(2302, -217)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart9" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(2718, -443)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
+
+[node name="Heart10" parent="Node2D" instance=ExtResource("5_1runh")]
+position = Vector2(2820, -205)
+physics_material_override = SubResource("PhysicsMaterial_0g6hm")
+gravity_scale = 0.2
+never_free = true
 
 [connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

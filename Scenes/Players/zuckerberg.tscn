@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cow04uiq1ts0n" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeAttack2.png" id="5_qh40v"]
 [ext_resource type="Texture2D" uid="uid://bijfqia774ahw" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeTaunt.png" id="6_aurti"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_ny0c6"]
-[ext_resource type="AudioStream" uid="uid://cri45vkrxvx4b" path="res://Assets/Sound/Grunts and Shit/Ouch.mp3" id="7_y6xei"]
+[ext_resource type="AudioStream" uid="uid://psxoprj4df57" path="res://Assets/Sound/Grunts and Shit/Ouch.mp3" id="7_y6xei"]
 [ext_resource type="AudioStream" uid="uid://b6um8iwqntpex" path="res://Assets/Sound/ZuccSounds/ZuccAttack1.mp3" id="8_lrk76"]
 [ext_resource type="PackedScene" uid="uid://1tjj3f83uxoa" path="res://Scenes/Weapons/hands_meta.tscn" id="9_4ljin"]
 [ext_resource type="AudioStream" uid="uid://dmxv2h3sdxd0b" path="res://Assets/Sound/ZuccSounds/ZuccAttack2.mp3" id="9_aenlr"]

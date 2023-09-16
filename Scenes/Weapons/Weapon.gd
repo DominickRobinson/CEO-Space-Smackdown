@@ -9,6 +9,11 @@ var active : bool = false
 
 func _ready():
 	deactivate()
+	
+	var hurtbox = get_node("HurtBox")
+	if is_instance_valid(hurtbox):
+		hurtbox.damage = damage
+		hurtbox.impulse_length = impulse_length
 
 
 func toggle():

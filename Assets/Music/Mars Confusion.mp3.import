@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtiidfow0h234"
+path="res://.godot/imported/Mars Confusion.mp3-96d60c04b9d6c8009c8baa3c4a7d1321.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Mars Confusion.mp3"
+dest_files=["res://.godot/imported/Mars Confusion.mp3-96d60c04b9d6c8009c8baa3c4a7d1321.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

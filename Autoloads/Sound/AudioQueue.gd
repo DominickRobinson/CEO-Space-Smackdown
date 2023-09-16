@@ -1,6 +1,6 @@
 extends Node
 
-@export var count : int = 10
+@export var count : int = 200
 
 var audio_stream_players : 
 	get:

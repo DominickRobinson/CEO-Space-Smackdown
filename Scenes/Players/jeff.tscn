@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y58gl2b7ujph" path="res://Assets/Art/Characters/Bezos/BezosAttack2.png" id="5_5qb84"]
 [ext_resource type="Texture2D" uid="uid://dwypjdstkgbsp" path="res://Assets/Art/Characters/Bezos/BezosTaunt.png" id="6_qx64o"]
 [ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_i3nhl"]
-[ext_resource type="AudioStream" uid="uid://byuo1o7syf2n0" path="res://Assets/Sound/Grunts and Shit/Grr.mp3" id="7_io1j1"]
+[ext_resource type="AudioStream" uid="uid://dbpedae3tbbte" path="res://Assets/Sound/Grunts and Shit/Grr.mp3" id="7_io1j1"]
 [ext_resource type="AudioStream" uid="uid://vqtjubtykopt" path="res://Assets/Sound/Jeff/HellYes.mp3" id="7_y23gl"]
 [ext_resource type="AudioStream" uid="uid://dm3322bqkftsx" path="res://Assets/Sound/Jeff/I Sleep at Midnight.mp3" id="8_ee1rm"]
 [ext_resource type="PackedScene" uid="uid://dt7ro8qp6likf" path="res://Scenes/Weapons/sound_wave.tscn" id="9_0m5dk"]

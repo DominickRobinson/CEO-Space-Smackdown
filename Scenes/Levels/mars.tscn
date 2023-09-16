@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx0mnlvqiqrx"]
+[gd_scene load_steps=14 format=3 uid="uid://cx0mnlvqiqrx"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_0ay28"]
+[ext_resource type="AudioStream" uid="uid://vqa78kca5sxy" path="res://Assets/Music/Deserted Buddha Battle Theme.mp3" id="2_7nmxa"]
 [ext_resource type="Texture2D" uid="uid://dlfs81vc4hqgl" path="res://Assets/Art/Backgrounds/Mars.png" id="2_a36qd"]
 [ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_rfe80"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_x6v2h"]
+[ext_resource type="PackedScene" uid="uid://cfyhnkpeyqw4w" path="res://Scenes/Objects/cybertruck.tscn" id="6_mipx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
 size = Vector2(146, 2826)
@@ -55,6 +57,7 @@ _data = {
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0ay28")
+music = ExtResource("2_7nmxa")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(1811, 1086)
@@ -93,10 +96,10 @@ position = Vector2(1827, 307)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
-position = Vector2(1296, 1023)
+position = Vector2(1336, 992)
 
 [node name="PlayerTwoSpawn" type="Node2D" parent="."]
-position = Vector2(2348, 1054)
+position = Vector2(2197, 1065)
 
 [node name="PlayerWin" type="CanvasLayer" parent="."]
 
@@ -120,5 +123,13 @@ theme_override_font_sizes/font_size = 100
 libraries = {
 "": SubResource("AnimationLibrary_qtn10")
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Cybertruck" parent="Node2D" instance=ExtResource("6_mipx6")]
+position = Vector2(2192, 1142)
+
+[node name="Cybertruck2" parent="Node2D" instance=ExtResource("6_mipx6")]
+position = Vector2(1343, 1113)
 
 [connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]
