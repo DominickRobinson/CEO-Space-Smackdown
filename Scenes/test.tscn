@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://emu8vshkmy0t"]
+[gd_scene load_steps=5 format=3 uid="uid://emu8vshkmy0t"]
 
-[ext_resource type="PackedScene" uid="uid://cu7tyxjgkvb2y" path="res://Scenes/player.tscn" id="1_111kg"]
-[ext_resource type="PackedScene" uid="uid://cvkukm1i5g3i" path="res://Scenes/car.tscn" id="2_iw2vg"]
+[ext_resource type="PackedScene" uid="uid://cu7tyxjgkvb2y" path="res://Scenes/Players/player.tscn" id="1_111kg"]
+[ext_resource type="PackedScene" uid="uid://djkhsgccrpxdv" path="res://Scenes/Weapons/meta_quest_controller.tscn" id="2_ij2en"]
+[ext_resource type="PackedScene" uid="uid://cfyhnkpeyqw4w" path="res://Scenes/Objects/cybertruck.tscn" id="2_iw2vg"]
+[ext_resource type="PackedScene" uid="uid://csuqvbnfdxkhx" path="res://Scenes/Objects/chair.tscn" id="3_2klqh"]
 
 [node name="test" type="Node2D"]
 
@@ -14,7 +16,14 @@ polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(71, -116, 343, -106, 613, -4, 835, -95, 1084, -97, 1087, -258, 1178, -263, 1179, 150, -97, 135, -95, -508, 53, -493)
 
-[node name="Player" parent="." instance=ExtResource("1_111kg")]
+[node name="Player" parent="." node_paths=PackedStringArray("weapon1") instance=ExtResource("1_111kg")]
+position = Vector2(299, 125)
+weapon1 = NodePath("MetaQuestController")
 
-[node name="Car" parent="." instance=ExtResource("2_iw2vg")]
+[node name="MetaQuestController" parent="Player" instance=ExtResource("2_ij2en")]
+
+[node name="Cybertruck" parent="." instance=ExtResource("2_iw2vg")]
 position = Vector2(903, 390)
+
+[node name="Chair" parent="." instance=ExtResource("3_2klqh")]
+position = Vector2(131, 78)

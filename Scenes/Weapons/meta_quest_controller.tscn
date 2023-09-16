@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://djkhsgccrpxdv"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/meta_quest_controller.gd" id="1_t465m"]
+[ext_resource type="Texture2D" uid="uid://c0f404pururyy" path="res://Assets/Art/Weapons/meta_quest_controller.png" id="2_xsx3q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_md1bd"]
+height = 46.0
+
+[node name="MetaQuestController" type="Node2D"]
+script = ExtResource("1_t465m")
+
+[node name="Controller" type="RigidBody2D" parent="."]
+mass = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Controller"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xsx3q")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Controller"]
+length = 100.0
+rest_length = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Controller"]
+position = Vector2(2, 3)
+rotation = 2.61799
+shape = SubResource("CapsuleShape2D_md1bd")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)

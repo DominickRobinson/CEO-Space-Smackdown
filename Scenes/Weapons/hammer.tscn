@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kv7kvm4y5jch"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/hammer.gd" id="1_71bay"]
+[ext_resource type="Texture2D" uid="uid://ytkm50kfneyf" path="res://Assets/Art/Weapons/hammer.png" id="2_hhrxq"]
+
+[node name="Hammer" type="CollisionPolygon2D"]
+polygon = PackedVector2Array(-42, -4, 24, -2, 24, -12, 34, -12, 33, 13, 24, 13, 24, 4, -42, 3)
+script = ExtResource("1_71bay")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_hhrxq")

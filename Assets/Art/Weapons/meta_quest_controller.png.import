@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmxykfrt2lr7c"
-path="res://.godot/imported/car.svg-03b45c570f58fcc1e8d18484afa6279a.ctex"
+uid="uid://c0f404pururyy"
+path="res://.godot/imported/meta_quest_controller.png-58bcc5406786c7fcac82d19a2b7fb4bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/car.svg"
-dest_files=["res://.godot/imported/car.svg-03b45c570f58fcc1e8d18484afa6279a.ctex"]
+source_file="res://Assets/Art/Weapons/meta_quest_controller.png"
+dest_files=["res://.godot/imported/meta_quest_controller.png-58bcc5406786c7fcac82d19a2b7fb4bc.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
