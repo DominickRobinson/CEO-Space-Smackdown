@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1uma1wnkux3f"]
+[gd_scene load_steps=15 format=3 uid="uid://c1uma1wnkux3f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/LevelSelectScreen.gd" id="1_4slje"]
 [ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_dtntp"]
@@ -7,7 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://d1hu45cxiqxle" path="res://Assets/Art/Backgrounds/bliss.png" id="4_h0s7f"]
 [ext_resource type="PackedScene" uid="uid://doi7mr86bkho7" path="res://Scenes/Menu/player_select_display.tscn" id="4_khslj"]
 [ext_resource type="PackedScene" uid="uid://vuur8xxn2cog" path="res://Scenes/Levels/level.tscn" id="5_jte54"]
+[ext_resource type="Texture2D" uid="uid://dlfs81vc4hqgl" path="res://Assets/Art/Backgrounds/Mars.png" id="7_qhyqh"]
 [ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="7_xqdh2"]
+[ext_resource type="PackedScene" uid="uid://cx0mnlvqiqrx" path="res://Scenes/Levels/mars.tscn" id="8_15pj2"]
+[ext_resource type="Texture2D" uid="uid://c7p3k5efm8eys" path="res://Assets/Art/Backgrounds/Moon.png" id="8_k4wj2"]
+[ext_resource type="Texture2D" uid="uid://c61k4ay44g14s" path="res://Assets/Art/Backgrounds/shark_tank.jpg" id="9_tutm0"]
+[ext_resource type="PackedScene" uid="uid://djw8ogy31m2fm" path="res://Scenes/Levels/moon.tscn" id="10_divac"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0xtxj"]
 
@@ -55,27 +60,32 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_0xtxj")
+texture = ExtResource("7_qhyqh")
 expand_mode = 2
 script = ExtResource("3_yc4p8")
+character_scene = ExtResource("8_15pj2")
+character_name = "Mars"
 
 [node name="TextureRect3" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_0xtxj")
+texture = ExtResource("8_k4wj2")
 expand_mode = 2
 script = ExtResource("3_yc4p8")
+character_scene = ExtResource("10_divac")
+character_name = "Moon"
 
 [node name="TextureRect4" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("PlaceholderTexture2D_0xtxj")
+texture = ExtResource("9_tutm0")
 expand_mode = 2
 script = ExtResource("3_yc4p8")
+character_name = "Shark Tank"
 
 [node name="TextureRect5" type="TextureRect" parent="IconGrid"]
 custom_minimum_size = Vector2(128, 128)
@@ -110,6 +120,7 @@ offset_left = 725.0
 offset_top = 262.0
 offset_right = 925.0
 offset_bottom = 462.0
+player_number = 0
 
 [node name="FightButton" type="Control" parent="."]
 visible = false
@@ -146,9 +157,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -359.5
-offset_top = 24.0
+offset_top = 67.0
 offset_right = 359.5
-offset_bottom = 84.0
+offset_bottom = 127.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("7_xqdh2")
 theme_override_font_sizes/font_size = 60

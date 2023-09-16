@@ -5,8 +5,10 @@ extends VBoxContainer
 
 
 func _ready():
-	$Label2.text = "Player " + str(player_number)
-
+	if player_number != 0:
+		$Label2.text = "Player " + str(player_number)
+	else:
+		$Label2.hide()
 
 func set_character(current: CharacterSelectIcon) -> void:
 	$Label.text = current.character_name

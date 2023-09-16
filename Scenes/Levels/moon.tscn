@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://djw8ogy31m2fm"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_1jhv0"]
+[ext_resource type="Texture2D" uid="uid://c7p3k5efm8eys" path="res://Assets/Art/Backgrounds/Moon.png" id="2_4wjul"]
+[ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_6brat"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_qaw1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
+size = Vector2(146, 2826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pye1"]
+size = Vector2(153, 2860)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl1gh"]
+size = Vector2(3906.5, 377)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky0ef"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_v7t3t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_143di"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.411765)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtn10"]
+_data = {
+"RESET": SubResource("Animation_v7t3t"),
+"show": SubResource("Animation_143di")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1jhv0")
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1754, 1127)
+scale = Vector2(5, 3.467)
+texture = ExtResource("2_4wjul")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(226, 533)
+anchor_mode = 0
+zoom = Vector2(0.378, 0.546)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-47, 26)
+polygon = PackedVector2Array(110.333, 281.333, 155.667, 283.667, 173, 290.667, 212.667, 292.667, 258.333, 297.333, 284.667, 302, 324.667, 308.667, 334, 310.333, 365.333, 315.667, 373.667, 315, 428, 324.667, 449, 325.667, 499, 340, 510.333, 339.333, 520.667, 345.333, 541, 345, 562.667, 359.333, 588.333, 368, 604.667, 371, 615, 367.333, 625, 374.667, 635.667, 374.667, 647.333, 368.667, 656, 372.667, 693.333, 373.667, 758, 369.667, 805.333, 358.667, 888.333, 347.333, 922.333, 344.333, 967, 335, 1010.33, 325.333, 1043, 323, 1083.67, 322.667, 1131.33, 315, 1155, 314.667, 1151.33, 548, 112.333, 541.667)
+
+[node name="BlastZone" type="Area2D" parent="."]
+script = ExtResource("3_6brat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(58, 648)
+shape = SubResource("RectangleShape2D_2nw5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(3472, 688)
+shape = SubResource("RectangleShape2D_6pye1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1848, 1920)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1827, 307)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="PlayerOneSpawn" type="Node2D" parent="."]
+position = Vector2(812, 951)
+
+[node name="PlayerTwoSpawn" type="Node2D" parent="."]
+position = Vector2(2574, 969)
+
+[node name="PlayerWin" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerWin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ky0ef")
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerWin/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerWin/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qaw1u")
+theme_override_font_sizes/font_size = 100
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerWin"]
+libraries = {
+"": SubResource("AnimationLibrary_qtn10")
+}
+
+[connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

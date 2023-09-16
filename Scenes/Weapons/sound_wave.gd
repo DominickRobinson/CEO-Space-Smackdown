@@ -32,3 +32,7 @@ func _on_body_entered(body):
 	body = body as RigidBody2D
 	var vec = Vector2(cos(global_rotation), sin(global_rotation)) * impulse_length
 	body.apply_central_impulse(vec)
+	if body is Player:
+		body.take_damage(damage, vec)
+	else:
+		body.apply_central_impulse(vec)

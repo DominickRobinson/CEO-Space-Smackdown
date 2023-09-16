@@ -10,6 +10,8 @@ extends Node2D
 @onready var end_screen = $PlayerWin
 @onready var end_anim = $PlayerWin/AnimationPlayer
 
+
+
 func _ready():
 	var p1 = LoadManager.player1_character.instantiate() as Player
 	p1.player_number = 1
@@ -30,6 +32,7 @@ func _ready():
 	
 	end_screen.hide()
 	
+	get_tree().current_scene.add_child(load("res://Scenes/UI/fight.tscn").instantiate())
 
 func win1():
 	end_screen.show()
