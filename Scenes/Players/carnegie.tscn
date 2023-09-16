@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://bp2txumtf1fvc"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_ix6sf"]
+[ext_resource type="Texture2D" uid="uid://ct12xsfypsjmb" path="res://Assets/Art/Characters/Carnegie/CarnegieHit.png" id="3_kr2gi"]
+[ext_resource type="Texture2D" uid="uid://dduda6mqqgwov" path="res://Assets/Art/Characters/Carnegie/CarnegieAttack1.png" id="4_crxnl"]
+[ext_resource type="Texture2D" uid="uid://cikwnw7oha57r" path="res://Assets/Art/Characters/Carnegie/CarnegieAttack2.png" id="5_q5nkv"]
+[ext_resource type="Texture2D" uid="uid://ducptto5orfai" path="res://Assets/Art/Characters/Carnegie/CarnegieTaunt.png" id="6_tu5r2"]
+[ext_resource type="Texture2D" uid="uid://c83awmwsxuqo6" path="res://Assets/Art/Characters/Carnegie/CarnegieIdle.png" id="7_8dyjk"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_4451h"]
+[ext_resource type="PackedScene" uid="uid://csa0ip7vnq2ny" path="res://Scenes/Weapons/heart_thrower.tscn" id="8_l61eq"]
+[ext_resource type="PackedScene" uid="uid://cy43qiwdnt8ga" path="res://Scenes/Weapons/girder.tscn" id="9_jc67o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
+radius = 32.0
+
+[node name="Carnegie" type="RigidBody2D" node_paths=PackedStringArray("weapon1", "weapon2") groups=["Players"]]
+script = ExtResource("1_ix6sf")
+texture_idle = ExtResource("7_8dyjk")
+texture_hit = ExtResource("3_kr2gi")
+texture_attack1 = ExtResource("4_crxnl")
+texture_attack2 = ExtResource("5_q5nkv")
+texture_taunt = ExtResource("6_tu5r2")
+weapon1 = NodePath("HeartThrower")
+weapon2 = NodePath("Girder")
+max_linear_velocity = 1250
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("7_8dyjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thyhi")
+
+[node name="RayCast2Ds" type="Node2D" parent="."]
+script = ExtResource("7_4451h")
+
+[node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(0, 36)
+
+[node name="LeftCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(-36, 0)
+
+[node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="HeartThrower" parent="." instance=ExtResource("8_l61eq")]
+position = Vector2(47, -18)
+
+[node name="Girder" parent="." instance=ExtResource("9_jc67o")]
+position = Vector2(76, 3)

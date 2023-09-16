@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://cx0mnlvqiqrx"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_0ay28"]
+[ext_resource type="Texture2D" uid="uid://dlfs81vc4hqgl" path="res://Assets/Art/Backgrounds/Mars.png" id="2_a36qd"]
+[ext_resource type="Script" path="res://Scenes/Levels/BlastZone.gd" id="3_rfe80"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="4_x6v2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nw5l"]
+size = Vector2(146, 2826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pye1"]
+size = Vector2(153, 2860)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl1gh"]
+size = Vector2(3906.5, 377)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky0ef"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_v7t3t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_143di"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.411765)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtn10"]
+_data = {
+"RESET": SubResource("Animation_v7t3t"),
+"show": SubResource("Animation_143di")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_0ay28")
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(1754, 1127)
+scale = Vector2(5, 3.467)
+texture = ExtResource("2_a36qd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(462, 623)
+anchor_mode = 0
+zoom = Vector2(0.45, 0.65)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-47, 26)
+polygon = PackedVector2Array(169, 391, 195, 404, 204, 398.333, 232, 404.333, 259.667, 400.333, 268.333, 390, 298.333, 390.333, 314, 397, 332.333, 392.667, 344.333, 397, 347.667, 403.333, 364, 400, 374.667, 397, 379.667, 401, 386.333, 398.333, 406, 401.333, 418.667, 399.333, 439.667, 396, 446.667, 401, 459.333, 397.333, 477.333, 402.333, 492, 395.667, 498.667, 397, 509.333, 389.333, 517, 391.333, 523.333, 388.333, 548.333, 387.667, 553.333, 393, 562.333, 399, 573.667, 398.333, 580.667, 403.667, 591, 402, 605.333, 399.333, 611.333, 397, 612.667, 401.667, 640, 404.667, 656.667, 399.667, 674, 403.667, 684.667, 401, 703, 405, 726.667, 402.333, 754.333, 404.667, 769, 410.667, 794.667, 405.333, 864.667, 404, 878.333, 388.333, 888, 389.333, 913.333, 370, 936.333, 369, 941.667, 376.667, 960.667, 375.333, 971, 377.667, 982.667, 374, 1032.33, 372.667, 1048, 375, 1060.67, 384, 1069, 393.333, 1092, 394.333, 1092.33, 529.333, 169.333, 530.333)
+
+[node name="BlastZone" type="Area2D" parent="."]
+script = ExtResource("3_rfe80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(277, 659)
+shape = SubResource("RectangleShape2D_2nw5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(3201, 615)
+shape = SubResource("RectangleShape2D_6pye1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1868, 1866)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BlastZone"]
+position = Vector2(1827, 307)
+shape = SubResource("RectangleShape2D_sl1gh")
+
+[node name="PlayerOneSpawn" type="Node2D" parent="."]
+position = Vector2(812, 951)
+
+[node name="PlayerTwoSpawn" type="Node2D" parent="."]
+position = Vector2(2574, 969)
+
+[node name="PlayerWin" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerWin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ky0ef")
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerWin/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerWin/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_x6v2h")
+theme_override_font_sizes/font_size = 100
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerWin"]
+libraries = {
+"": SubResource("AnimationLibrary_qtn10")
+}
+
+[connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

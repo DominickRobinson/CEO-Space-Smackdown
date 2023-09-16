@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt7ro8qp6likf"]
+
+[ext_resource type="Texture2D" uid="uid://cdlfyrjy07uko" path="res://Assets/Art/Weapons/soundwave.png" id="1_1vv20"]
+[ext_resource type="Script" path="res://Scenes/Weapons/sound_wave.gd" id="1_jilr8"]
+
+[node name="SoundWave" type="Area2D"]
+script = ExtResource("1_jilr8")
+damage = 20.0
+impulse_length = 1000.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 117, -95, 150, -55, 160, -5, 151, 46, 118, 90)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(108, 2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1vv20")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

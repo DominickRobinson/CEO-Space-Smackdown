@@ -13,6 +13,7 @@ func activate():
 	b.global_position = global_position
 	b.global_rotation = global_rotation
 	b.linear_velocity = Vector2(cos(global_rotation), sin(global_rotation)) * shoot_speed
+#	b.add_collision_exception_with(get_parent())
 	get_tree().current_scene.add_child(b)
 	
 	timer.start(1.0)

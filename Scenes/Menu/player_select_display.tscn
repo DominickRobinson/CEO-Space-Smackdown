@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://doi7mr86bkho7"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/PlayerSelectDisplay.gd" id="1_w14l1"]
+[ext_resource type="Texture2D" uid="uid://cxphfy5av3stj" path="res://Assets/Art/select.png" id="2_jyxlh"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="2_puayy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_84icf"]
+
+[node name="PlayerDisplay" type="VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_w14l1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_puayy")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Image" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_84icf")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="ReadyOutline" type="TextureRect" parent="Image"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("2_jyxlh")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_puayy")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1

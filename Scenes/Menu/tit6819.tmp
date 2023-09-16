@@ -1,0 +1,225 @@
+[gd_scene load_steps=9 format=3 uid="uid://cldgcwnjkncgt"]
+
+[ext_resource type="FontFile" uid="uid://dn4ccg5sikevk" path="res://Resources/Fonts/future_z/Future Z.ttf" id="1_sxcss"]
+[ext_resource type="FontFile" uid="uid://bie3o3cdsphqq" path="res://Resources/Fonts/future_now/Future Now.ttf" id="2_lrlke"]
+[ext_resource type="FontFile" uid="uid://bawsclxchqpey" path="res://Resources/Fonts/IMPACTFUL.ttf" id="2_tnpqp"]
+[ext_resource type="Shader" path="res://Resources/Shaders/space3.gdshader" id="3_wriqw"]
+[ext_resource type="Script" path="res://Scenes/Menu/Begin.gd" id="4_xsshg"]
+[ext_resource type="PackedScene" uid="uid://emu8vshkmy0t" path="res://Scenes/test.tscn" id="5_8pvjb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmgg0"]
+shader = ExtResource("3_wriqw")
+shader_parameter/iterations = 17
+shader_parameter/formuparam = 0.53
+shader_parameter/volsteps = 10
+shader_parameter/stepsize = 0.1
+shader_parameter/zoom = 0.8
+shader_parameter/tile = 0.85
+shader_parameter/speed = 0.001
+shader_parameter/brightness = 0.0015
+shader_parameter/darkmatter = 0.3
+shader_parameter/distfading = 0.73
+shader_parameter/saturation = 0.85
+shader_parameter/rotation = null
+shader_parameter/colorampMix = 0.5
+shader_parameter/isColoramp = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et121"]
+bg_color = Color(0, 0, 0, 0.839216)
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bmgg0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sxcss")
+theme_override_font_sizes/font_size = 107
+text = "CEO Space
+Smackdown"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Begin" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 80
+text = "Begin
+"
+flat = true
+script = ExtResource("4_xsshg")
+scene = ExtResource("5_8pvjb")
+
+[node name="VSeparator2" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Credits" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+flat = true
+
+[node name="HSeparator" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="WorksCited" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 40
+text = "Works Cited"
+flat = true
+
+[node name="CreditsContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_et121")
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Credits" type="Label" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sxcss")
+theme_override_font_sizes/font_size = 107
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Dom" type="Label" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 30
+text = "Dominick Robinson - programmer"
+
+[node name="Andrew" type="Label" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 30
+text = "Andrew Knowles - programmer"
+
+[node name="Gabe" type="Label" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 30
+text = "Gabriel Prado - artist"
+
+[node name="Peter" type="Label" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tnpqp")
+theme_override_font_sizes/font_size = 30
+text = "Peter Ragone - musician"
+
+[node name="VSeparator2" type="VSeparator" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Close" type="Button" parent="CreditsContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lrlke")
+theme_override_font_sizes/font_size = 60
+text = "Close"
+
+[node name="WorksCitedContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_et121")
+
+[node name="CenterContainer" type="CenterContainer" parent="WorksCitedContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorksCitedContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Works Cited" type="Label" parent="WorksCitedContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sxcss")
+theme_override_font_sizes/font_size = 90
+text = "Works Cited"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="WorksCitedContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="WorksCitedContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WorksCitedContainer/CenterContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="WorksCitedContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Close" type="Button" parent="WorksCitedContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lrlke")
+theme_override_font_sizes/font_size = 60
+text = "Close"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Begin" to="CenterContainer/VBoxContainer/HBoxContainer/Begin" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Credits" to="CreditsContainer" method="show"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/WorksCited" to="WorksCitedContainer" method="show"]
+[connection signal="pressed" from="CreditsContainer/CenterContainer/VBoxContainer/Close" to="CreditsContainer" method="hide"]
+[connection signal="pressed" from="WorksCitedContainer/CenterContainer/VBoxContainer/Close" to="WorksCitedContainer" method="hide"]

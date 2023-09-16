@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://birrydot1f25b"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_k67xw"]
+[ext_resource type="Texture2D" uid="uid://cabf72oo7essf" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeIdle.png" id="2_2rxwv"]
+[ext_resource type="Texture2D" uid="uid://cfwb2xusq3w0v" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeHit.png" id="3_e8w2w"]
+[ext_resource type="Texture2D" uid="uid://du7dliegl0ltm" path="res://Assets/Art/Characters/Musk/MuskHit.png" id="3_u46cy"]
+[ext_resource type="Texture2D" uid="uid://cxwdxjno7s4dh" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeAttack1.png" id="4_illew"]
+[ext_resource type="Texture2D" uid="uid://cow04uiq1ts0n" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeAttack2.png" id="5_qh40v"]
+[ext_resource type="Texture2D" uid="uid://bijfqia774ahw" path="res://Assets/Art/Characters/ZuccFake/ZuccFakeTaunt.png" id="6_aurti"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_ny0c6"]
+[ext_resource type="PackedScene" uid="uid://1tjj3f83uxoa" path="res://Scenes/Weapons/hands_meta.tscn" id="9_4ljin"]
+[ext_resource type="PackedScene" uid="uid://djkhsgccrpxdv" path="res://Scenes/Weapons/meta_quest_controller.tscn" id="9_ndjst"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
+radius = 32.0
+
+[node name="Zuckerberg" type="RigidBody2D" node_paths=PackedStringArray("weapon1", "weapon2") groups=["Players"]]
+script = ExtResource("1_k67xw")
+texture_idle = ExtResource("2_2rxwv")
+texture_hit = ExtResource("3_e8w2w")
+texture_attack1 = ExtResource("4_illew")
+texture_attack2 = ExtResource("5_qh40v")
+texture_taunt = ExtResource("6_aurti")
+weapon1 = NodePath("MetaQuestController")
+weapon2 = NodePath("HandsBasketball")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("3_u46cy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thyhi")
+
+[node name="RayCast2Ds" type="Node2D" parent="."]
+script = ExtResource("7_ny0c6")
+
+[node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(0, 36)
+
+[node name="LeftCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(-36, 0)
+
+[node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="MetaQuestController" parent="." instance=ExtResource("9_ndjst")]
+
+[node name="HandsBasketball" parent="." instance=ExtResource("9_4ljin")]

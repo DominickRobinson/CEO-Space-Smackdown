@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3xig27ok6nfo"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Player.gd" id="1_cea6n"]
+[ext_resource type="Texture2D" uid="uid://covv76247a4ny" path="res://Assets/Art/Characters/Cuban/CubanIdle.png" id="2_iwt3b"]
+[ext_resource type="Texture2D" uid="uid://8teuo2jt2q3f" path="res://Assets/Art/Characters/Cuban/CubanHurt.png" id="3_h650v"]
+[ext_resource type="Texture2D" uid="uid://b23java5wqnc4" path="res://Assets/Art/Characters/Cuban/CubanAttack1.png" id="4_yc4p4"]
+[ext_resource type="Texture2D" uid="uid://ceriqax6sell3" path="res://Assets/Art/Characters/Cuban/CubanAttack2.png" id="5_a0o0v"]
+[ext_resource type="Texture2D" uid="uid://w1jeosk8dcj" path="res://Assets/Art/Characters/Cuban/CubanTaunt.png" id="6_alx10"]
+[ext_resource type="Script" path="res://Scenes/StayUpright.gd" id="7_oxdqp"]
+[ext_resource type="PackedScene" uid="uid://cxwi8mlky7iyv" path="res://Scenes/Weapons/shark.tscn" id="8_p77hf"]
+[ext_resource type="PackedScene" uid="uid://b51bi3vgp08e" path="res://Scenes/Weapons/hands_basketball.tscn" id="9_1y0cx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thyhi"]
+radius = 32.0
+
+[node name="Cuban" type="RigidBody2D" node_paths=PackedStringArray("weapon1", "weapon2") groups=["Players"]]
+script = ExtResource("1_cea6n")
+texture_idle = ExtResource("2_iwt3b")
+texture_hit = ExtResource("3_h650v")
+texture_attack1 = ExtResource("4_yc4p4")
+texture_attack2 = ExtResource("5_a0o0v")
+texture_taunt = ExtResource("6_alx10")
+weapon1 = NodePath("HandsBasketball")
+weapon2 = NodePath("Shark")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_iwt3b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thyhi")
+
+[node name="RayCast2Ds" type="Node2D" parent="."]
+script = ExtResource("7_oxdqp")
+
+[node name="GroundCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(0, 36)
+
+[node name="LeftCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(-36, 0)
+
+[node name="RightCast" type="RayCast2D" parent="RayCast2Ds"]
+target_position = Vector2(36, 0)
+
+[node name="HitStunTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="HandsBasketball" parent="." instance=ExtResource("9_1y0cx")]
+show_behind_parent = true
+position = Vector2(69, -48)
+
+[node name="Shark" parent="." instance=ExtResource("8_p77hf")]
+position = Vector2(26, -5)

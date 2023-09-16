@@ -36,6 +36,8 @@ extends RigidBody2D
 @onready var sprite = $Sprite2D
 @onready var hitstun_timer = $HitStunTimer
 
+signal hit
+signal die
 
 var is_moving_right = false
 var is_moving_left = false
@@ -45,10 +47,12 @@ var in_hitstun = false
 
 var damage = 0
 
+var player_stats_resource = preload("res://Scenes/UI/player_stats.tscn")
 
 
 func _ready():
 	set_sprite(texture_idle)
+	add_child(player_stats_resource.instantiate())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,26 +63,50 @@ func _physics_process(_delta):
 	
 	check_commands()
 	
-	if Input.is_action_just_pressed("taunt"):
-		set_sprite(texture_taunt)
-	if Input.is_action_just_released("taunt"):
-		set_sprite(texture_idle)
-	
-	
-	if Input.is_action_just_pressed("attack1"):
-		if is_instance_valid(weapon1):
-			weapon1.toggle()
-			set_sprite(texture_attack1)
-			await get_tree().create_timer(1.0).timeout
+	if player_number == 1:
+		if Input.is_action_just_pressed("taunt"):
+			set_sprite(texture_taunt)
+		if Input.is_action_just_released("taunt"):
 			set_sprite(texture_idle)
-	
-	if Input.is_action_just_pressed("attack2"):
-		if is_instance_valid(weapon2):
-			weapon2.toggle()
-			set_sprite(texture_attack2)
-			await get_tree().create_timer(1.0).timeout
+		
+		
+		if Input.is_action_just_pressed("attack1"):
+			if is_instance_valid(weapon1):
+				weapon1.toggle()
+				if is_instance_valid(weapon2): weapon2.deactivate()
+				set_sprite(texture_attack1)
+				await get_tree().create_timer(1.0).timeout
+				set_sprite(texture_idle)
+		
+		if Input.is_action_just_pressed("attack2"):
+			if is_instance_valid(weapon2):
+				weapon2.toggle()
+				if is_instance_valid(weapon1): weapon1.deactivate()
+				set_sprite(texture_attack2)
+				await get_tree().create_timer(1.0).timeout
+				set_sprite(texture_idle)
+	else:
+		if Input.is_action_just_pressed("taunt_alt"):
+			set_sprite(texture_taunt)
+		if Input.is_action_just_released("taunt_alt"):
 			set_sprite(texture_idle)
-	
+		
+		
+		if Input.is_action_just_pressed("attack1_alt"):
+			if is_instance_valid(weapon1):
+				weapon1.toggle()
+				if is_instance_valid(weapon2): weapon2.deactivate()
+				set_sprite(texture_attack1)
+				await get_tree().create_timer(1.0).timeout
+				set_sprite(texture_idle)
+		
+		if Input.is_action_just_pressed("attack2_alt"):
+			if is_instance_valid(weapon2):
+				weapon2.toggle()
+				if is_instance_valid(weapon1): weapon1.deactivate()
+				set_sprite(texture_attack2)
+				await get_tree().create_timer(1.0).timeout
+				set_sprite(texture_idle)
 	
 	var lv_boost = aerial_linear_velocity_boost
 	var av_boost = aerial_angular_velocity_boost
@@ -109,6 +137,36 @@ func _physics_process(_delta):
 				linear_velocity.x -= lv_boost
 		#jump
 		if Input.is_action_just_pressed("jump"):
+			if grounded():
+				jumps = 1
+				linear_velocity.y -= ground_jump_boost
+			elif on_left_wall():
+				jumps = 1
+				linear_velocity = Vector2.RIGHT.rotated(deg_to_rad(-wall_jump_angle_degrees)) * wall_jump_boost
+			elif on_right_wall():
+				jumps = 1
+				linear_velocity = Vector2.LEFT.rotated(deg_to_rad(wall_jump_angle_degrees)) * wall_jump_boost
+			elif jumps > 0:
+				linear_velocity.y = -aerial_jump_boost
+				jumps = 0
+	else:
+		if Input.is_action_pressed("move_right_alt"):
+			if angular_velocity < 0: angular_velocity = min_angular_velocity
+			angular_velocity += av_boost
+			if linear_velocity.x < 0: 
+				linear_velocity.x = -linear_velocity.x * 0.4
+			else:
+				linear_velocity.x += lv_boost
+		#move left
+		if Input.is_action_pressed("move_left_alt"):
+			if angular_velocity > 0: angular_velocity = -min_angular_velocity
+			angular_velocity -= av_boost
+			if linear_velocity.x > 0: 
+				linear_velocity.x = -linear_velocity.x * 0.4
+			else:
+				linear_velocity.x -= lv_boost
+		#jump
+		if Input.is_action_just_pressed("jump_alt"):
 			if grounded():
 				jumps = 1
 				linear_velocity.y -= ground_jump_boost
@@ -152,12 +210,17 @@ func on_right_wall() -> bool:
 
 
 func check_commands() -> void:
-	is_moving_right = Input.is_action_pressed("move_right")
-	is_moving_left = Input.is_action_pressed("move_left")
-	is_jumping = Input.is_action_pressed("jump")
-
+	if player_number == 1:
+		is_moving_right = Input.is_action_pressed("move_right")
+		is_moving_left = Input.is_action_pressed("move_left")
+		is_jumping = Input.is_action_pressed("jump")
+	else:
+		is_moving_right = Input.is_action_pressed("move_right_alt")
+		is_moving_left = Input.is_action_pressed("move_left_alt")
+		is_jumping = Input.is_action_pressed("jump_alt")
 
 func take_damage(amount:float, impulse:Vector2) -> void:
+	
 	damage += amount
 	apply_central_impulse(impulse * damage / 100)
 	
@@ -165,10 +228,14 @@ func take_damage(amount:float, impulse:Vector2) -> void:
 	hitstun_timer.start(1.0 * amount / 10)
 	in_hitstun = true
 	modulate = Color(0.5, 0.5, 0.5)
+	hit.emit()
+	
 	await hitstun_timer.timeout
 	in_hitstun = false
 	modulate = Color.WHITE
 	set_sprite(texture_idle)
+	
+
 
 
 func is_hitstun_active() -> bool:
@@ -177,3 +244,8 @@ func is_hitstun_active() -> bool:
 
 func set_sprite(texture:Texture2D):
 	sprite.texture = texture
+
+
+func kill():
+	die.emit()
+	queue_free()

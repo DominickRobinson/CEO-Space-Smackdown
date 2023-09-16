@@ -1,6 +1,9 @@
 class_name Weapon
 extends Node2D
 
+@export var damage : float = 0.0
+@export var impulse_length : float = 0.0
+
 
 var active : bool = false
 

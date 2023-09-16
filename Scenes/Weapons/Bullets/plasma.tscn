@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxgdd4f3frgpc"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Bullets/Bullet.gd" id="1_oojcy"]
+[ext_resource type="Texture2D" uid="uid://d2wfvmnn5j7jb" path="res://Assets/Art/Weapons/laser.png" id="2_t22rj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2ab5"]
+radius = 4.24262
+height = 54.0
+
+[node name="Plasma" type="RigidBody2D"]
+gravity_scale = 0.5
+script = ExtResource("1_oojcy")
+damage = 5.0
+impulse_length = 400.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29, 2.38419e-07)
+rotation = 1.56251
+shape = SubResource("CapsuleShape2D_u2ab5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(1.56991, 1.23911)
+rotation = -0.90262
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_t22rj")
