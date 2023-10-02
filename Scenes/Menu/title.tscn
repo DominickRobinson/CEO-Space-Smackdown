@@ -480,7 +480,7 @@ text = "Player 2:
 Left - LEFT ARROW
 Right - RIGHT ARROW
 Jump - UP ARROW
-Attack1\\Select - PG UP/BACKSLASH
+Attack1/Select - PG UP/FORWARD SLASH
 Attack2 - PG DN/SHIFT
 Taunt - DOWN ARROW
 "

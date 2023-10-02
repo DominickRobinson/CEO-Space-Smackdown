@@ -1,7 +1,7 @@
 extends Button
 
 
-var scene:PackedScene = preload("res://Scenes/Menu/title.tscn")
+@export var scene:PackedScene
 
 
 func _on_pressed():

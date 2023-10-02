@@ -48,7 +48,7 @@ func win1():
 	end_anim.play("show")
 	end_label.text = "Player 1 wins!"
 	await get_tree().create_timer(3.0).timeout
-	SceneManager.load_scene(load("res://Scenes/Menu/title.tscn"))
+	SceneManager.load_scene(load("res://Scenes/Menu/character_select_screen.tscn"))
 
 
 func win2():
@@ -58,7 +58,7 @@ func win2():
 	end_anim.play("show")
 	end_label.text = "Player 2 wins!"
 	await get_tree().create_timer(3.0).timeout
-	SceneManager.load_scene(load("res://Scenes/Menu/title.tscn"))
+	SceneManager.load_scene(load("res://Scenes/Menu/character_select_screen.tscn"))
 
 
 

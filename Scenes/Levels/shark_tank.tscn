@@ -78,7 +78,7 @@ polygon = PackedVector2Array(607.333, 462, 610, 424.333, 613.667, 422, 608, 412.
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-174.667, 5.66667)
-polygon = PackedVector2Array(676.667, 389, 867, 384.667, 873, 414, 679.667, 437.667)
+polygon = PackedVector2Array(676.667, 389, 846, 385, 846.667, 395.667, 859.334, 396.667, 863.667, 413.333, 681.334, 430)
 
 [node name="BlastZone" type="Area2D" parent="."]
 script = ExtResource("3_wt2r4")
@@ -100,10 +100,10 @@ position = Vector2(1956, 518)
 shape = SubResource("RectangleShape2D_sl1gh")
 
 [node name="PlayerOneSpawn" type="Node2D" parent="."]
-position = Vector2(1546, 1152)
+position = Vector2(1591, 1148)
 
 [node name="PlayerTwoSpawn" type="Node2D" parent="."]
-position = Vector2(1987, 1138)
+position = Vector2(1959, 1142)
 
 [node name="PlayerWin" type="CanvasLayer" parent="."]
 
@@ -131,24 +131,15 @@ libraries = {
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Basketball" parent="Node2D" instance=ExtResource("5_uk0fh")]
-position = Vector2(1378, 867)
+position = Vector2(1337, 865)
 
 [node name="Basketball3" parent="Node2D" instance=ExtResource("5_uk0fh")]
-position = Vector2(1506, 876)
-
-[node name="Basketball4" parent="Node2D" instance=ExtResource("5_uk0fh")]
-position = Vector2(1644, 863)
-
-[node name="Basketball5" parent="Node2D" instance=ExtResource("5_uk0fh")]
-position = Vector2(1785, 862)
-
-[node name="Basketball6" parent="Node2D" instance=ExtResource("5_uk0fh")]
-position = Vector2(1903, 867)
+position = Vector2(1547, 836)
 
 [node name="Basketball7" parent="Node2D" instance=ExtResource("5_uk0fh")]
 position = Vector2(1602, -1284)
 
 [node name="Basketball2" parent="Node2D" instance=ExtResource("5_uk0fh")]
-position = Vector2(2030, 872)
+position = Vector2(1992, 803)
 
 [connection signal="body_entered" from="BlastZone" to="BlastZone" method="_on_body_entered"]

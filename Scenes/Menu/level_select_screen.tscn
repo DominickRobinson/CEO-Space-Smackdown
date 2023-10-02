@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c1uma1wnkux3f"]
+[gd_scene load_steps=28 format=3 uid="uid://c1uma1wnkux3f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/LevelSelectScreen.gd" id="1_4slje"]
 [ext_resource type="PackedScene" uid="uid://4h380xjheurx" path="res://Scenes/Menu/space_background.tscn" id="1_dtntp"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://dsh6c18m5k4id" path="res://Assets/Sound/LevelSelect/The Fence-[AudioTrimmer.com].mp3" id="19_ax70x"]
 [ext_resource type="AudioStream" uid="uid://b3dyi3gmipix6" path="res://Assets/Sound/LevelSelect/Steel Mill-[AudioTrimmer.com].mp3" id="22_47jtw"]
 [ext_resource type="PackedScene" uid="uid://cnkq4nb6ti7p6" path="res://Scenes/UI/scene_button.tscn" id="26_nyc8n"]
+[ext_resource type="PackedScene" uid="uid://bkxrrngqph02m" path="res://Scenes/Menu/character_select_screen.tscn" id="27_vh2y8"]
 
 [node name="level_select_screen" type="Control"]
 layout_mode = 3
@@ -180,3 +181,4 @@ offset_left = 20.0
 offset_top = 563.0
 offset_right = -861.0
 offset_bottom = -14.0
+scene = ExtResource("27_vh2y8")

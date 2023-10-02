@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bkxrrngqph02m"]
+[gd_scene load_steps=31 format=3 uid="uid://bkxrrngqph02m"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectScreen.gd" id="1_gle5c"]
 [ext_resource type="Script" path="res://Scenes/Menu/CharacterSelectIcon.gd" id="2_6fr1w"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://dfkpvafe1av1i" path="res://Assets/Sound/CharacterSelect/Zuckerberg.mp3" id="22_lpbjq"]
 [ext_resource type="AudioStream" uid="uid://cn5f156gsxfms" path="res://Assets/Sound/CharacterSelect/Carnegie.mp3" id="25_day4d"]
 [ext_resource type="PackedScene" uid="uid://cnkq4nb6ti7p6" path="res://Scenes/UI/scene_button.tscn" id="29_iql2b"]
+[ext_resource type="PackedScene" uid="uid://cldgcwnjkncgt" path="res://Scenes/Menu/title.tscn" id="30_xokh4"]
 
 [node name="character_select_screen" type="Control"]
 layout_mode = 3
@@ -235,3 +236,4 @@ offset_right = -965.0
 offset_bottom = -7.0
 text = "Go to 
 main menu"
+scene = ExtResource("30_xokh4")
